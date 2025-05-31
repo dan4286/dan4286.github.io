@@ -25,6 +25,58 @@
             padding: 80px 20px 20px 20px;
         }
 
+        .site-header {
+            background: rgba(255, 255, 255, 0.98);
+            margin: -60px -20px 40px -20px;
+            padding: 30px 20px;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            text-align: center;
+        }
+
+        .site-header.selected {
+            border: 3px solid #667eea;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .site-header .section-label {
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: #667eea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7em;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .site-header:hover .section-label,
+        .site-header.selected .section-label {
+            opacity: 1;
+        }
+
+        .site-header h1 {
+            color: #4a5568;
+            font-size: 3em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .site-header p {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
         .section {
             background: rgba(255, 255, 255, 0.95);
             margin: 20px 0;
@@ -34,11 +86,36 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
         }
 
         .section:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .section.selected {
+            border: 3px solid #667eea;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .section-label {
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: #667eea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7em;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .section:hover .section-label,
+        .section.selected .section-label {
+            opacity: 1;
         }
 
         .section h1 {
@@ -166,10 +243,12 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            width: 280px;
+            width: 320px;
             z-index: 1001;
             transition: transform 0.3s ease, opacity 0.3s ease;
             overflow: hidden;
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .style-panel.collapsed {
@@ -257,6 +336,37 @@
             text-align: right;
             flex-shrink: 0;
             white-space: nowrap;
+        }
+
+        .section-selector {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .section-selector select {
+            width: 100%;
+            padding: 8px;
+            border: 2px solid #e2e8f0;
+            border-radius: 5px;
+            font-size: 0.9em;
+            background: white;
+        }
+
+        .style-section {
+            margin-bottom: 20px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.02);
+            border-radius: 5px;
+            border-left: 3px solid #667eea;
+        }
+
+        .style-section h4 {
+            font-size: 0.9em;
+            color: #4a5568;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .config-editor {
@@ -363,6 +473,46 @@
             margin-right: 10px;
         }
 
+        .section nav, .site-header nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    padding: 15px 0;
+    border-top: 2px solid rgba(102, 126, 234, 0.2);
+    border-bottom: 2px solid rgba(102, 126, 234, 0.2);
+}
+
+.section nav a, .site-header nav a {
+    color: #667eea !important;
+    text-decoration: none !important;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    border-bottom: none !important;
+}
+
+.section nav a:hover, .site-header nav a:hover {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    border-bottom: none !important;
+}
+
+@media (max-width: 768px) {
+    .section nav, .site-header nav {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .section nav a, .site-header nav a {
+        padding: 12px 20px;
+    }
+}
+
         @media (max-width: 768px) {
             .style-panel {
                 position: relative;
@@ -424,6 +574,10 @@
             .container {
                 padding: 20px;
             }
+
+            .site-header {
+                margin: -20px -20px 20px -20px;
+            }
         }
     </style>
 </head>
@@ -439,87 +593,199 @@
             <button class="style-panel-toggle" onclick="toggleStylePanel()">🎨</button>
             <h3 style="margin-bottom: 15px; font-size: 1em;">Style Controls</h3>
             
-            <div class="style-control">
-                <div class="style-control-row">
-                    <label for="bgGradient1">BG Start:</label>
-                    <input type="color" id="bgGradient1" value="#667eea" onchange="updateStyles()">
+            <div class="section-selector">
+                <label for="targetSelector" style="display: block; margin-bottom: 5px; font-weight: bold;">Edit Target:</label>
+                <select id="targetSelector" onchange="switchTarget()">
+                    <option value="global">🌍 Global Styles</option>
+                </select>
+            </div>
+
+            <div id="globalStyles">
+                <div class="style-section">
+                    <h4>Background</h4>
+                    <div class="style-control">
+                        <div class="style-control-row">
+                            <label for="bgGradient1">Start:</label>
+                            <input type="color" id="bgGradient1" value="#667eea" onchange="updateStyles()">
+                        </div>
+                    </div>
+                    
+                    <div class="style-control">
+                        <div class="style-control-row">
+                            <label for="bgGradient2">End:</label>
+                            <input type="color" id="bgGradient2" value="#764ba2" onchange="updateStyles()">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-section">
+                    <h4>Sections</h4>
+                    <div class="style-control">
+                        <div class="style-control-row">
+                            <label for="sectionBg">Background:</label>
+                            <input type="color" id="sectionBg" value="#ffffff" onchange="updateStyles()">
+                        </div>
+                    </div>
+                    
+                    <div class="style-control">
+                        <div class="style-control-row">
+                            <label for="sectionOpacity">Opacity:</label>
+                            <input type="range" id="sectionOpacity" min="0.5" max="1" step="0.05" value="0.95" onchange="updateStyles()">
+                            <span class="value-display" id="opacityValue">95%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="style-control">
+                        <div class="style-control-row">
+                            <label for="borderRadius">Radius:</label>
+                            <input type="range" id="borderRadius" min="0" max="30" value="15" onchange="updateStyles()">
+                            <span class="value-display" id="radiusValue">15px</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-section">
+                    <h4>Typography</h4>
+                    <div class="style-control">
+                        <div class="style-control-row">
+                            <label for="fontFamily">Font:</label>
+                            <select id="fontFamily" onchange="updateStyles()">
+                                <option value="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Segoe UI</option>
+                                <option value="Arial, sans-serif">Arial</option>
+                                <option value="Georgia, serif">Georgia</option>
+                                <option value="'Times New Roman', serif">Times</option>
+                                <option value="'Courier New', monospace">Courier</option>
+                                <option value="Helvetica, sans-serif">Helvetica</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="style-control">
+                        <div class="style-control-row">
+                            <label for="fontSize">Size:</label>
+                            <input type="range" id="fontSize" min="12" max="24" value="16" onchange="updateStyles()">
+                            <span class="value-display" id="fontSizeValue">16px</span>
+                        </div>
+                    </div>
+                    
+                    <div class="style-control">
+                        <div class="style-control-row">
+                            <label for="textColor">Text:</label>
+                            <input type="color" id="textColor" value="#333333" onchange="updateStyles()">
+                        </div>
+                    </div>
+                    
+                    <div class="style-control">
+                        <div class="style-control-row">
+                            <label for="headingColor">Heading:</label>
+                            <input type="color" id="headingColor" value="#4a5568" onchange="updateStyles()">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-section">
+                    <h4>Colors</h4>
+                    <div class="style-control">
+                        <div class="style-control-row">
+                            <label for="accentColor">Accent:</label>
+                            <input type="color" id="accentColor" value="#667eea" onchange="updateStyles()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sectionStyles" style="display: none;">
+                <div class="style-section">
+                    <h4>Section Layout</h4>
+                    <div class="style-control">
+                        <div class="style-control-row">
+                            <label for="sectionBgCustom">Background:</label>
+                            <input type="color" id="sectionBgCustom" onchange="updateSectionStyles()">
+                        </div>
+                    </div>
+                    
+                    <div class="style-control">
+                        <div class="style-control-row">
+                            <label for="sectionPadding">Padding:</label>
+                            <input type="range" id="sectionPadding" min="10" max="60" value="30" onchange="updateSectionStyles()">
+                            <span class="value-display" id="paddingValue">30px</span>
+                        </div>
+                    </div>
+                    
+                    <div class="style-control">
+                        <div class="style-control-row">
+                            <label for="sectionAlign">Align:</label>
+                            <select id="sectionAlign" onchange="updateSectionStyles()">
+                                <option value="left">Left</option>
+                                <option value="center">Center</option>
+                                <option value="right">Right</option>
+                                <option value="justify">Justify</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-section">
+                    <h4>Headings</h4>
+                    <div class="style-control">
+                        <div class="style-control-row">
+                            <label for="headingColorCustom">Color:</label>
+                            <input type="color" id="headingColorCustom" onchange="updateSectionStyles()">
+                        </div>
+                    </div>
+                    
+                    <div class="style-control">
+                        <div class="style-control-row">
+                            <label for="headingSize">Size:</label>
+                            <input type="range" id="headingSize" min="1" max="3" step="0.1" value="2" onchange="updateSectionStyles()">
+                            <span class="value-display" id="headingSizeValue">2em</span>
+                        </div>
+                    </div>
+                    
+                    <div class="style-control">
+                        <div class="style-control-row">
+                            <label for="headingAlign">Align:</label>
+                            <select id="headingAlign" onchange="updateSectionStyles()">
+                                <option value="left">Left</option>
+                                <option value="center">Center</option>
+                                <option value="right">Right</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="style-section">
+                    <h4>Paragraphs</h4>
+                    <div class="style-control">
+                        <div class="style-control-row">
+                            <label for="paragraphColor">Color:</label>
+                            <input type="color" id="paragraphColor" onchange="updateSectionStyles()">
+                        </div>
+                    </div>
+                    
+                    <div class="style-control">
+                        <div class="style-control-row">
+                            <label for="paragraphSize">Size:</label>
+                            <input type="range" id="paragraphSize" min="0.8" max="1.5" step="0.1" value="1.1" onchange="updateSectionStyles()">
+                            <span class="value-display" id="paragraphSizeValue">1.1em</span>
+                        </div>
+                    </div>
+                    
+                    <div class="style-control">
+                        <div class="style-control-row">
+                            <label for="paragraphAlign">Align:</label>
+                            <select id="paragraphAlign" onchange="updateSectionStyles()">
+                                <option value="left">Left</option>
+                                <option value="center">Center</option>
+                                <option value="right">Right</option>
+                                <option value="justify">Justify</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="style-control">
-                <div class="style-control-row">
-                    <label for="bgGradient2">BG End:</label>
-                    <input type="color" id="bgGradient2" value="#764ba2" onchange="updateStyles()">
-                </div>
-            </div>
-            
-            <div class="style-control">
-                <div class="style-control-row">
-                    <label for="sectionBg">Section BG:</label>
-                    <input type="color" id="sectionBg" value="#ffffff" onchange="updateStyles()">
-                </div>
-            </div>
-            
-            <div class="style-control">
-                <div class="style-control-row">
-                    <label for="sectionOpacity">Opacity:</label>
-                    <input type="range" id="sectionOpacity" min="0.5" max="1" step="0.05" value="0.95" onchange="updateStyles()">
-                    <span class="value-display" id="opacityValue">95%</span>
-                </div>
-            </div>
-            
-            <div class="style-control">
-                <div class="style-control-row">
-                    <label for="fontFamily">Font:</label>
-                    <select id="fontFamily" onchange="updateStyles()">
-                        <option value="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Segoe UI</option>
-                        <option value="Arial, sans-serif">Arial</option>
-                        <option value="Georgia, serif">Georgia</option>
-                        <option value="'Times New Roman', serif">Times</option>
-                        <option value="'Courier New', monospace">Courier</option>
-                        <option value="Helvetica, sans-serif">Helvetica</option>
-                    </select>
-                </div>
-            </div>
-            
-            <div class="style-control">
-                <div class="style-control-row">
-                    <label for="textColor">Text:</label>
-                    <input type="color" id="textColor" value="#333333" onchange="updateStyles()">
-                </div>
-            </div>
-            
-            <div class="style-control">
-                <div class="style-control-row">
-                    <label for="headingColor">Heading:</label>
-                    <input type="color" id="headingColor" value="#4a5568" onchange="updateStyles()">
-                </div>
-            </div>
-            
-            <div class="style-control">
-                <div class="style-control-row">
-                    <label for="accentColor">Accent:</label>
-                    <input type="color" id="accentColor" value="#667eea" onchange="updateStyles()">
-                </div>
-            </div>
-            
-            <div class="style-control">
-                <div class="style-control-row">
-                    <label for="fontSize">Font Size:</label>
-                    <input type="range" id="fontSize" min="12" max="24" value="16" onchange="updateStyles()">
-                    <span class="value-display" id="fontSizeValue">16px</span>
-                </div>
-            </div>
-            
-            <div class="style-control">
-                <div class="style-control-row">
-                    <label for="borderRadius">Radius:</label>
-                    <input type="range" id="borderRadius" min="0" max="30" value="15" onchange="updateStyles()">
-                    <span class="value-display" id="radiusValue">15px</span>
-                </div>
-            </div>
-            
-            <button onclick="resetStyles()" style="width: 100%; margin-top: 15px; background: #e53e3e; color: white; border: none; padding: 8px; border-radius: 4px; cursor: pointer; font-size: 0.8em;">Reset</button>
+            <button onclick="resetStyles()" style="width: 100%; margin-top: 15px; background: #e53e3e; color: white; border: none; padding: 8px; border-radius: 4px; cursor: pointer; font-size: 0.8em;">Reset Styles</button>
         </div>
 
         <div class="config-editor" id="configEditor">
@@ -527,11 +793,20 @@
             <h3>Configuration Editor</h3>
             <textarea id="configInput" placeholder="Enter configuration here...
 Example:
-s1-h1 = Welcome to My Site
-s1-p1 = This is the first paragraph
-s1-i1 = https://via.placeholder.com/400x200
-s2-h2 = Second Section
-s2-p1 = Another paragraph here"></textarea>
+header
+h1 = My Website
+nav1 = Home, About, Services, Contact
+p1 = Welcome to my amazing site
+
+s1
+h2 = About Us
+p1 = This is the first section
+i1 = https://via.placeholder.com/400x200
+
+s2
+h2 = Services
+nav2 = Web Design, Development, SEO
+p1 = What we offer"></textarea>
             <button onclick="generateSections()">Generate Sections</button>
             <button onclick="clearSections()">Clear All</button>
         </div>
@@ -542,8 +817,11 @@ s2-p1 = Another paragraph here"></textarea>
     </div>
 
     <script>
-        // Store sections data
+        // Store sections data and styles
         let sectionsData = {};
+        let sectionStyles = {};
+        let currentTarget = 'global';
+        let hasHeader = false;
         
         // Style panel toggle functionality
         function toggleStylePanel() {
@@ -585,6 +863,121 @@ s2-p1 = Another paragraph here"></textarea>
             }
         }
 
+        // Switch between global and section-specific styling
+        function switchTarget() {
+            const selector = document.getElementById('targetSelector');
+            currentTarget = selector.value;
+            
+            const globalStyles = document.getElementById('globalStyles');
+            const sectionStyles = document.getElementById('sectionStyles');
+            
+            // Clear section selection
+            document.querySelectorAll('.section, .site-header').forEach(section => {
+                section.classList.remove('selected');
+            });
+            
+            if (currentTarget === 'global') {
+                globalStyles.style.display = 'block';
+                sectionStyles.style.display = 'none';
+            } else {
+                globalStyles.style.display = 'none';
+                sectionStyles.style.display = 'block';
+                
+                // Highlight selected section
+                const targetSection = document.getElementById(currentTarget) || document.querySelector('.site-header');
+                if (targetSection) {
+                    targetSection.classList.add('selected');
+                }
+                
+                // Load section-specific styles
+                loadSectionStyles(currentTarget);
+            }
+        }
+
+        // Load section-specific styles into controls
+        function loadSectionStyles(sectionId) {
+            const styles = sectionStyles[sectionId] || {};
+            
+            document.getElementById('sectionBgCustom').value = styles.backgroundColor || '#ffffff';
+            document.getElementById('sectionPadding').value = styles.padding || 30;
+            document.getElementById('sectionAlign').value = styles.textAlign || 'left';
+            document.getElementById('headingColorCustom').value = styles.headingColor || '#4a5568';
+            document.getElementById('headingSize').value = styles.headingSize || 2;
+            document.getElementById('headingAlign').value = styles.headingAlign || 'left';
+            document.getElementById('paragraphColor').value = styles.paragraphColor || '#333333';
+            document.getElementById('paragraphSize').value = styles.paragraphSize || 1.1;
+            document.getElementById('paragraphAlign').value = styles.paragraphAlign || 'left';
+            
+            // Update display values
+            document.getElementById('paddingValue').textContent = (styles.padding || 30) + 'px';
+            document.getElementById('headingSizeValue').textContent = (styles.headingSize || 2) + 'em';
+            document.getElementById('paragraphSizeValue').textContent = (styles.paragraphSize || 1.1) + 'em';
+        }
+
+        // Update section-specific styles
+        function updateSectionStyles() {
+            if (currentTarget === 'global') return;
+            
+            const sectionId = currentTarget;
+            if (!sectionStyles[sectionId]) {
+                sectionStyles[sectionId] = {};
+            }
+            
+            const styles = sectionStyles[sectionId];
+            styles.backgroundColor = document.getElementById('sectionBgCustom').value;
+            styles.padding = document.getElementById('sectionPadding').value;
+            styles.textAlign = document.getElementById('sectionAlign').value;
+            styles.headingColor = document.getElementById('headingColorCustom').value;
+            styles.headingSize = document.getElementById('headingSize').value;
+            styles.headingAlign = document.getElementById('headingAlign').value;
+            styles.paragraphColor = document.getElementById('paragraphColor').value;
+            styles.paragraphSize = document.getElementById('paragraphSize').value;
+            styles.paragraphAlign = document.getElementById('paragraphAlign').value;
+            
+            // Update display values
+            document.getElementById('paddingValue').textContent = styles.padding + 'px';
+            document.getElementById('headingSizeValue').textContent = styles.headingSize + 'em';
+            document.getElementById('paragraphSizeValue').textContent = styles.paragraphSize + 'em';
+            
+            updateStyles();
+        }
+
+        // Update section selector when sections change
+        function updateSectionSelector() {
+    const selector = document.getElementById('targetSelector');
+    const currentValue = selector.value;
+    
+    // Clear existing options except global
+    selector.innerHTML = '<option value="global">🌍 Global Styles</option>';
+    
+    // Add header option if it exists
+    if (hasHeader) {
+        const option = document.createElement('option');
+        option.value = 'header';
+        option.textContent = '🏠 Site Header';
+        selector.appendChild(option);
+    }
+    
+    // Add section options (excluding header from sectionsData)
+    Object.keys(sectionsData).forEach(sectionKey => {
+        if (sectionKey !== 'header') {  // Skip header since we handle it separately
+            const option = document.createElement('option');
+            option.value = sectionKey;
+            option.textContent = `📄 Section ${sectionKey.substring(1)}`;
+            selector.appendChild(option);
+        }
+    });
+    
+    // Restore selection if it still exists
+    if (currentValue !== 'global' && (sectionsData[currentValue] || (currentValue === 'header' && hasHeader))) {
+        selector.value = currentValue;
+    } else {
+        selector.value = 'global';
+        currentTarget = 'global';
+        switchTarget();
+    }
+}
+
         // Get current styles as CSS string
         function getCurrentStyles() {
             const bgGradient1 = document.getElementById('bgGradient1').value;
@@ -598,7 +991,7 @@ s2-p1 = Another paragraph here"></textarea>
             const fontSize = document.getElementById('fontSize').value;
             const borderRadius = document.getElementById('borderRadius').value;
 
-            return `
+            let css = `
         * {
             margin: 0;
             padding: 0;
@@ -618,6 +1011,33 @@ s2-p1 = Another paragraph here"></textarea>
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            margin: -20px -20px 40px -20px;
+            padding: 30px 20px;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        header h1 {
+            color: ${headingColor};
+            font-size: 3em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, ${bgGradient1}, ${bgGradient2});
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        header p {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 10px;
         }
 
         .section {
@@ -756,6 +1176,14 @@ s2-p1 = Another paragraph here"></textarea>
                 padding: 20px;
             }
             
+            header {
+                margin: -20px -20px 20px -20px;
+            }
+            
+            header h1 {
+                font-size: 2.5em;
+            }
+            
             .section h1 {
                 font-size: 2em;
             }
@@ -765,6 +1193,36 @@ s2-p1 = Another paragraph here"></textarea>
             }
         }
             `;
+
+            // Add section-specific styles
+            Object.keys(sectionStyles).forEach(sectionId => {
+                const styles = sectionStyles[sectionId];
+                const selector = sectionId === 'header' ? 'header' : `#${sectionId}`;
+                css += `
+        ${selector} {
+            background: ${styles.backgroundColor} !important;
+            padding: ${styles.padding}px !important;
+            text-align: ${styles.textAlign} !important;
+        }
+        
+        ${selector} h1, ${selector} h2, ${selector} h3 {
+            color: ${styles.headingColor} !important;
+            text-align: ${styles.headingAlign} !important;
+        }
+        
+        ${selector} h2 {
+            font-size: ${styles.headingSize}em !important;
+        }
+        
+        ${selector} p {
+            color: ${styles.paragraphColor} !important;
+            font-size: ${styles.paragraphSize}em !important;
+            text-align: ${styles.paragraphAlign} !important;
+        }
+                `;
+            });
+
+            return css;
         }
 
         // Export website functionality
@@ -780,6 +1238,9 @@ s2-p1 = Another paragraph here"></textarea>
             // Create a temporary div to process the content
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = contentHTML;
+            
+            // Remove section labels from export
+            tempDiv.querySelectorAll('.section-label').forEach(label => label.remove());
             
             // Find all buttons and add onclick attributes
             const buttons = tempDiv.querySelectorAll('button');
@@ -916,7 +1377,42 @@ s2-p1 = Another paragraph here"></textarea>
                 .style-panel-toggle {
                     background: ${hexToRgba(sectionBg, 0.9)} !important;
                 }
+                
+                .site-header h1 {
+                    background: linear-gradient(45deg, ${bgGradient1}, ${bgGradient2}) !important;
+                    -webkit-background-clip: text !important;
+                    -webkit-text-fill-color: transparent !important;
+                    background-clip: text !important;
+                }
             `;
+
+            // Add section-specific styles
+            Object.keys(sectionStyles).forEach(sectionId => {
+                const styles = sectionStyles[sectionId];
+                const selector = sectionId === 'header' ? '.site-header' : `#${sectionId}`;
+                dynamicStyles += `
+                ${selector} {
+                    background: ${styles.backgroundColor} !important;
+                    padding: ${styles.padding}px !important;
+                    text-align: ${styles.textAlign} !important;
+                }
+                
+                ${selector} h1, ${selector} h2, ${selector} h3 {
+                    color: ${styles.headingColor} !important;
+                    text-align: ${styles.headingAlign} !important;
+                }
+                
+                ${selector} h2 {
+                    font-size: ${styles.headingSize}em !important;
+                }
+                
+                ${selector} p {
+                    color: ${styles.paragraphColor} !important;
+                    font-size: ${styles.paragraphSize}em !important;
+                    text-align: ${styles.paragraphAlign} !important;
+                }
+                `;
+            });
 
             // Apply dynamic styles
             let styleElement = document.getElementById('dynamicStyles');
@@ -938,43 +1434,61 @@ s2-p1 = Another paragraph here"></textarea>
 
         // Reset styles to default
         function resetStyles() {
-            document.getElementById('bgGradient1').value = '#667eea';
-            document.getElementById('bgGradient2').value = '#764ba2';
-            document.getElementById('sectionBg').value = '#ffffff';
-            document.getElementById('sectionOpacity').value = '0.95';
-            document.getElementById('fontFamily').value = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
-            document.getElementById('textColor').value = '#333333';
-            document.getElementById('headingColor').value = '#4a5568';
-            document.getElementById('accentColor').value = '#667eea';
-            document.getElementById('fontSize').value = '16';
-            document.getElementById('borderRadius').value = '15';
+            if (currentTarget === 'global') {
+                document.getElementById('bgGradient1').value = '#667eea';
+                document.getElementById('bgGradient2').value = '#764ba2';
+                document.getElementById('sectionBg').value = '#ffffff';
+                document.getElementById('sectionOpacity').value = '0.95';
+                document.getElementById('fontFamily').value = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+                document.getElementById('textColor').value = '#333333';
+                document.getElementById('headingColor').value = '#4a5568';
+                document.getElementById('accentColor').value = '#667eea';
+                document.getElementById('fontSize').value = '16';
+                document.getElementById('borderRadius').value = '15';
+            } else {
+                // Reset section-specific styles
+                delete sectionStyles[currentTarget];
+                loadSectionStyles(currentTarget);
+            }
             updateStyles();
         }
 
         // Default configuration for demonstration
-        const defaultConfig = `s1-h1 = Welcome to Dynamic Template
-s1-p1 = This is a dynamic website template that generates content based on configuration. You can add headers, paragraphs, images, videos, and more by editing the configuration.
-s1-i1 = https://via.placeholder.com/600x300/667eea/ffffff?text=Dynamic+Image
-s1-p2 = Try editing the configuration in the panel to see the magic happen!
+        const defaultConfig = `header
+h1 = My Amazing Website
+p1 = Welcome to our beautiful and dynamic website
+nav1 = Home, About, Services, Contact, Blog
+p2 = Built with the Dynamic Template Builder
 
-s2-h2 = Features
-s2-p1 = This template supports various content types:
-s2-ul1 = Headers (h1, h2, h3)
-s2-ul2 = Paragraphs (p)
-s2-ul3 = Images (i)
-s2-ul4 = Videos (v)
-s2-ul5 = Lists (ul, ol)
-s2-ul6 = Links (a)
-s2-ul7 = Buttons (btn)
+s1
+h2 = Welcome to Dynamic Template
+p1 = This is a dynamic website template that generates content based on configuration. You can add headings, paragraphs, images, videos, and more by editing the configuration.
+i1 = https://via.placeholder.com/600x300/667eea/ffffff?text=Dynamic+Image
+p2 = Try editing the configuration in the panel to see the magic happen!
 
-s3-h2 = How to Use
-s3-p1 = The syntax is simple: sectionNumber-elementType-elementNumber = content
-s3-p2 = For example: s1-h1 = My Header creates a header in section 1
-s3-btn1 = Click Me!|onclick:alert('Button clicked!')
+s2
+h2 = Features
+p1 = This template supports various content types:
+ul1 = Headings (h1, h2, h3)
+ul2 = Paragraphs (p)
+ul3 = Images (i)
+ul4 = Videos (v)
+ul5 = Lists (ul, ol)
+ul6 = Links (a)
+ul7 = Buttons (btn)
+ul8 = Navigation bars (nav)
 
-s4-h2 = Export Your Website
-s4-p1 = Once you're happy with your design and content, click the "Export Website" button to download a clean HTML file without the editing panels.
-s4-p2 = The exported file will include all your content and styling, ready to be hosted anywhere!`;
+s3
+h2 = How to Use
+p1 = The syntax is simple: just type the section number (s1, s2, etc.) and then list your elements below
+p2 = For example: nav1 = Home, About, Contact creates a navigation bar
+nav2 = Products, Support, Login
+btn1 = Click Me!|onclick:alert('Button clicked!')
+
+s4
+h2 = Section-Specific Styling
+p1 = You can now style individual sections! Use the dropdown in the style panel to switch between global styles and section-specific customization.
+p2 = Each section can have its own colors, alignment, padding, and typography settings.`;
 
         // Load default configuration on page load
         document.addEventListener('DOMContentLoaded', function() {
@@ -985,18 +1499,37 @@ s4-p2 = The exported file will include all your content and styling, ready to be
         function parseConfiguration(config) {
             const lines = config.split('\n').filter(line => line.trim() !== '');
             sectionsData = {};
+            hasHeader = false;
+            let currentSection = null;
 
             lines.forEach(line => {
-                const match = line.match(/^s(\d+)-([a-z]+)(\d+)\s*=\s*(.*)$/);
-                if (match) {
-                    const [, sectionNum, elementType, elementNum, content] = match;
-                    const sectionKey = `s${sectionNum}`;
-                    
-                    if (!sectionsData[sectionKey]) {
-                        sectionsData[sectionKey] = {};
+                line = line.trim();
+                
+                // Check if this is a header section
+                if (line === 'header') {
+                    currentSection = 'header';
+                    hasHeader = true;
+                    if (!sectionsData[currentSection]) {
+                        sectionsData[currentSection] = {};
                     }
-                    
-                    sectionsData[sectionKey][`${elementType}${elementNum}`] = content.trim();
+                    return;
+                }
+                
+                // Check if this is a section header (e.g., "s1", "s2", etc.)
+                const sectionMatch = line.match(/^s(\d+)$/);
+                if (sectionMatch) {
+                    currentSection = `s${sectionMatch[1]}`;
+                    if (!sectionsData[currentSection]) {
+                        sectionsData[currentSection] = {};
+                    }
+                    return;
+                }
+                
+                // Check if this is an element line (e.g., "h1 = Welcome", "p1 = Text", etc.)
+                const elementMatch = line.match(/^([a-z]+)(\d+)\s*=\s*(.*)$/);
+                if (elementMatch && currentSection) {
+                    const [, elementType, elementNum, content] = elementMatch;
+                    sectionsData[currentSection][`${elementType}${elementNum}`] = content.trim();
                 }
             });
         }
@@ -1057,6 +1590,18 @@ s4-p2 = The exported file will include all your content and styling, ready to be
                     }
                     break;
                     
+                case 'nav':
+                    element = document.createElement('nav');
+                    const navItems = content.split(',').map(item => item.trim());
+                    navItems.forEach(item => {
+                        const link = document.createElement('a');
+                        link.textContent = item;
+                        // Create a simple anchor from the item name
+                        link.href = '#' + item.toLowerCase().replace(/\s+/g, '-');
+                        element.appendChild(link);
+                    });
+                    break;
+                    
                 case 'q':
                     element = document.createElement('blockquote');
                     element.textContent = content;
@@ -1078,15 +1623,84 @@ s4-p2 = The exported file will include all your content and styling, ready to be
             const contentDiv = document.getElementById('content');
             contentDiv.innerHTML = '';
             
-            // Sort sections by number
-            const sortedSections = Object.keys(sectionsData).sort((a, b) => {
-                return parseInt(a.substring(1)) - parseInt(b.substring(1));
-            });
+            // Generate header if it exists
+            if (hasHeader && sectionsData.header) {
+                const headerDiv = document.createElement('header');
+                headerDiv.className = 'site-header';
+                
+                // Add section label
+                const label = document.createElement('div');
+                label.className = 'section-label';
+                label.textContent = 'Site Header';
+                headerDiv.appendChild(label);
+                
+                const headerData = sectionsData.header;
+                
+                // Group list items
+                const listGroups = {};
+                const otherElements = {};
+                
+                Object.keys(headerData).forEach(elementKey => {
+                    const match = elementKey.match(/^(ul|ol)(\d+)$/);
+                    if (match) {
+                        const [, listType, ] = match;
+                        if (!listGroups[listType]) {
+                            listGroups[listType] = [];
+                        }
+                        listGroups[listType].push(headerData[elementKey]);
+                    } else {
+                        otherElements[elementKey] = headerData[elementKey];
+                    }
+                });
+                
+                // Sort elements by their number
+                const sortedElements = Object.keys(otherElements).sort((a, b) => {
+                    const aNum = parseInt(a.match(/\d+$/)[0]);
+                    const bNum = parseInt(b.match(/\d+$/)[0]);
+                    return aNum - bNum;
+                });
+                
+                // Add non-list elements
+                sortedElements.forEach(elementKey => {
+                    const elementType = elementKey.replace(/\d+$/, '');
+                    const elementNum = elementKey.match(/\d+$/)[0];
+                    const content = otherElements[elementKey];
+                    
+                    const element = createElement(elementType, content, elementNum);
+                    headerDiv.appendChild(element);
+                });
+                
+                // Add lists
+                Object.keys(listGroups).forEach(listType => {
+                    const listElement = document.createElement(listType);
+                    listGroups[listType].forEach(itemContent => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = itemContent;
+                        listElement.appendChild(listItem);
+                    });
+                    headerDiv.appendChild(listElement);
+                });
+                
+                contentDiv.appendChild(headerDiv);
+            }
+            
+            // Sort sections by number (excluding header)
+            const sortedSections = Object.keys(sectionsData)
+                .filter(key => key !== 'header')
+                .sort((a, b) => {
+                    return parseInt(a.substring(1)) - parseInt(b.substring(1));
+                });
             
             sortedSections.forEach(sectionKey => {
                 const sectionDiv = document.createElement('div');
                 sectionDiv.className = 'section';
                 sectionDiv.id = sectionKey;
+                
+                // Add section label
+                const label = document.createElement('div');
+                label.className = 'section-label';
+                label.textContent = `Section ${sectionKey.substring(1)}`;
+                sectionDiv.appendChild(label);
                 
                 const sectionData = sectionsData[sectionKey];
                 
@@ -1137,12 +1751,19 @@ s4-p2 = The exported file will include all your content and styling, ready to be
                 
                 contentDiv.appendChild(sectionDiv);
             });
+            
+            // Update section selector
+            updateSectionSelector();
+            updateStyles();
         }
 
         function clearSections() {
             document.getElementById('configInput').value = '';
             document.getElementById('content').innerHTML = '';
             sectionsData = {};
+            sectionStyles = {};
+            hasHeader = false;
+            updateSectionSelector();
         }
     </script>
 </body>
