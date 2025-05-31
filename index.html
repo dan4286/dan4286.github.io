@@ -20,16 +20,15 @@
         }
 
         .container {
-            max-width: 1200px;
             margin: 0 auto;
             padding: 80px 20px 20px 20px;
         }
 
         .site-header {
             background: rgba(255, 255, 255, 0.98);
-            margin: -60px -20px 40px -20px;
+            margin: 0px -20px 40px -20px;
             padding: 30px 20px;
-            border-radius: 0 0 15px 15px;
+            border-radius: 0;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -78,8 +77,9 @@
         }
 
         .section {
+	    max-width: 1200px;
             background: rgba(255, 255, 255, 0.95);
-            margin: 20px 0;
+            margin: 20px auto;
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -502,6 +502,7 @@
 }
 
 @media (max-width: 768px) {
+
     .section nav, .site-header nav {
         flex-direction: column;
         gap: 10px;
@@ -514,6 +515,7 @@
 }
 
         @media (max-width: 768px) {
+
             .style-panel {
                 position: relative;
                 top: 0;
@@ -1008,16 +1010,15 @@ p1 = What we offer"></textarea>
         }
 
         .container {
-            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 80px 20px 20px 20px;
         }
 
         header {
             background: rgba(255, 255, 255, 0.98);
-            margin: -20px -20px 40px -20px;
+            margin: 0px -20px 40px -20px;
             padding: 30px 20px;
-            border-radius: 0 0 15px 15px;
+            border-radius: 0;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1042,7 +1043,8 @@ p1 = What we offer"></textarea>
 
         .section {
             background: ${hexToRgba(sectionBg, sectionOpacity)};
-            margin: 20px 0;
+            max-width: 1200px;
+            margin: 20px auto;
             padding: 30px;
             border-radius: ${borderRadius}px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -1171,6 +1173,35 @@ p1 = What we offer"></textarea>
             border-color: ${accentColor};
         }
 
+        /* Navigation Styles */
+        .section nav, header nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            padding: 15px 0;
+            border-top: 2px solid rgba(102, 126, 234, 0.2);
+            border-bottom: 2px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .section nav a, header nav a {
+            color: ${accentColor} !important;
+            text-decoration: none !important;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            border-bottom: none !important;
+        }
+
+        .section nav a:hover, header nav a:hover {
+            background: linear-gradient(45deg, ${bgGradient1}, ${bgGradient2});
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            border-bottom: none !important;
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 20px;
@@ -1190,6 +1221,16 @@ p1 = What we offer"></textarea>
             
             .section h2 {
                 font-size: 1.5em;
+            }
+
+            .section nav, header nav {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .section nav a, header nav a {
+                padding: 12px 20px;
             }
         }
             `;
@@ -1384,6 +1425,15 @@ p1 = What we offer"></textarea>
                     -webkit-text-fill-color: transparent !important;
                     background-clip: text !important;
                 }
+
+                /* Navigation Styles */
+                .section nav a, .site-header nav a {
+                    color: ${accentColor} !important;
+                }
+
+                .section nav a:hover, .site-header nav a:hover {
+                    background: linear-gradient(45deg, ${bgGradient1}, ${bgGradient2}) !important;
+                }
             `;
 
             // Add section-specific styles
@@ -1455,13 +1505,13 @@ p1 = What we offer"></textarea>
 
         // Default configuration for demonstration
         const defaultConfig = `header
-h1 = My Amazing Website
-p1 = Welcome to our beautiful and dynamic website
+h1 = My Website
+p1 = Welcome to my website
 nav1 = Home, About, Services, Contact, Blog
 p2 = Built with the Dynamic Template Builder
 
 s1
-h2 = Welcome to Dynamic Template
+h1 = Welcome to Dynamic Template
 p1 = This is a dynamic website template that generates content based on configuration. You can add headings, paragraphs, images, videos, and more by editing the configuration.
 i1 = https://via.placeholder.com/600x300/667eea/ffffff?text=Dynamic+Image
 p2 = Try editing the configuration in the panel to see the magic happen!
