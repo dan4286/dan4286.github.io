@@ -151,6 +151,8 @@
     }
     .reverse .summary p {
       text-align: left;
+
+    
     }
     .expand-button {
       background: #007BFF;
@@ -254,6 +256,15 @@
         font-style: italic;
         font-weight: bold;
         font-size: 0.9rem;
+      }
+
+      .footer-content {
+        display: flex !important; 
+        justify-content: space-between;
+        padding: 10px 300px 40px 300px;
+        align-items: center;
+        background-color: #30303068;
+        color: #ffffff
       }
 
     .halfheader {
@@ -388,7 +399,8 @@
       /*margin-top: -20px;*/
       font-size: 1.2rem;
       width: 750px;
-      line-height: 2rem;
+      line-height: 1.5rem;
+      word-spacing: 0.01rem;
     }
 
     .carousel-item.focused img {
@@ -556,6 +568,14 @@
           font-size: 1.2em;
         }
 
+        .show768 {
+            display: none;
+          }
+        
+        .show1100 {
+            display: block;
+          }  
+
         @media screen and (min-width: 768px) and (max-width: 1130px) {
           .topcontainer, .btmcontainer {
             overflow-x: hidden;
@@ -585,6 +605,14 @@
 
           #project1 {
             overflow-x: auto !important;
+          }
+
+          .show1100 {
+            display: none;
+          }
+
+          .show768 {
+            display: block;
           }
         }
 
@@ -915,9 +943,11 @@
         <p>I’ve led commercial teams, coordinated projects, and supported international releases. Having worked in a variety of roles across various industries, I can contribute throughout the business. I’m versatile, eager to learn, and happy to help wherever needed</p>
         <p>I’m committed to having a positive impact not just on projects but internal teams, external partners, and audiences alike</p>
         <p style="font-weight: bold; text-decoration: underline">SKILLS & ABILITIES</p>
-        <p style="text-align: center;">Leading, Managing & Motivating    |    Coordinating    |    Problem Solving    |    Creative Thinking</p>
+        <p class="show768" style="text-align: left; white-space: pre;">• Leading, Managing & Motivating     • Coordinating     <br>• Problem Solving                              • Creative Thinking</p>
+        <p class="show1100" style="text-align: center;">Leading, Managing & Motivating    |    Coordinating    |    Problem Solving    |    Creative Thinking</p>
         <p style="font-weight: bold; text-decoration: underline">DIGITAL TOOLS</p>
-        <p style="text-align: center;">Microsoft Office & Google Workspace   |   Canva & DAWs <span style="font-style:italic; font-size: 0.8rem;">(Audacity, FL Studio, DaVinci Resolve)</span></p>
+        <p class="show768" style="text-align: left;">• Microsoft Office & Google Workspace <br>• Canva & DAWs <span style="font-style:italic; font-size: 0.8rem;">(Audacity, FL Studio, DaVinci Resolve)</span></p>
+        <p class="show1100" style="text-align: center;">Microsoft Office & Google Workspace   |   Canva & DAWs <span style="font-style:italic; font-size: 0.8rem;">(Audacity, FL Studio, DaVinci Resolve)</span></p>
         <p>I currently seek exciting opportunities and welcome the chance to discuss a range of projects and roles - <a class="mailto" style="font-weight: bold; text-decoration: underline" href="mailto:jdroy92@outlook.com">Contact</a></p>
         <p style="text-align: center; font-weight: bold;" class="personalplay">Recent Listens: <a href='https://open.spotify.com/track/3k38K0CjsmtnlAR5fyHmdc?si=aacefa042abe4714' target='_blank'><button style='background-color: #1DB954; color: white; border: none; padding: 4px 16px; border-radius: 20px; cursor: pointer;'>▶ Play</button></a></p>
       </div>
@@ -990,7 +1020,9 @@ Beyond project coordination and reporting, I develop templates, checklists, and 
     <ul id="tracklist">
       <!-- Tracklist items will be populated here -->
     </ul>
+    <p style="width: 600px; font-style: italic; opacity: 0.7; text-align: left; margin-top: -25px;">* performed across campaigns</p>
   </div>
+  
     </div>
     </div>
     <div class="section" id="sec1">
@@ -1058,7 +1090,7 @@ Investigated how these changes have affected access to EU markets and disrupted 
 Co-authored the MEG industry report by providing festival data and written analysis of artist line-ups at Cheltenham Jazz Festival and 2000 Trees (2017–2024)
 <br><br>
 </p>
-<img src="https://1drv.ms/f/c/a78c5b214e1a25ea/EjXqN47TVy1IiGWMT4s04EsBjH9JjiXcppvQSM2vUgX66w?e=SH3uHY" alt="alt1">
+<img src="img.png" alt="missing image">
     </div>
     <div class="section" id="sec4">
       <p style="font-weight: bold;">Black Deer Festival 2022 <span style="font-style:italic; font-weight: lighter;">(Main Stage Artist Liaison)</span></p>
@@ -1076,13 +1108,13 @@ Feedback praised the genuine connection made with the artist and the meaningful 
       <p style="font-weight: bold;">“Zine the Scene” <span style="font-style:italic; font-weight: lighter;">(New Music Enterprise Module)</span></p>
       <p>Project managed the creation of a digital guide documenting Cheltenham’s live music venues
 <br><br>
-<img src="https://1drv.ms/f/c/a78c5b214e1a25ea/EjXqN47TVy1IiGWMT4s04EsBjH9JjiXcppvQSM2vUgX66w?e=SH3uHY" alt="alt2"></p>
+<img class="jdrimg" style="display: block; margin: 0 auto;" src="https://1drv.ms/i/c/a78c5b214e1a25ea/IQREHoB3ZGaTTbLo0-5aY_gpAf4lYiUi-E860kK4QswgEPI?width=364&height=500" alt="Zine image"></p>
     </div>
     <div class="section" id="sec7">
       <p style="font-weight: bold;">Mindsong “Sing to Remember” Project <span style="font-style:italic; font-weight: lighter;">(Module Project)</span></p>
       <p>Curated a package of contemporary songs for use in Mindsong’s Dementia therapy sessions
 <br><br>
-<img src="https://1drv.ms/f/c/a78c5b214e1a25ea/EjXqN47TVy1IiGWMT4s04EsBjH9JjiXcppvQSM2vUgX66w?e=SH3uHY" alt="alt3"></p>
+<img class="jdrimg" style="display: block; margin: 0 auto;" src="https://1drv.ms/i/c/a78c5b214e1a25ea/IQRuCQS05wGUSbPr1D63gYuMATSf1wPq6S-vUEv_i4LUhBA?width=364&height=500" alt="Mindsong image"></p>
     </div>
     <div class="section hidden" id="sec8">
       <p style="font-weight: bold;">boldtext<span style="font-style:italic; font-weight: lighter;">italicized</span></p>
@@ -1197,7 +1229,12 @@ Worked solo in Galway, launching a new ride for the company as part of a Winter 
             </div>
         </div>
     </div>
-
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 JDRoy.com</p>
+      <p>Get in Touch: <a href='jdroy92@outlook.com' target='_blank'><button style='background-color: #221db9; color: white; border: none; padding: 4px 16px; border-radius: 20px; cursor: pointer;'>✉ Contact</button></a> </p>
+    </div>
+  </footer>
   <script>
     function toggleInfo() {
       var text = document.getElementById("hiddenText")
