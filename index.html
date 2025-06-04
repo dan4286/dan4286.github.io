@@ -40,12 +40,11 @@
       -webkit-backdrop-filter: blur(10px);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       border: 1px solid rgba(255, 255, 255, 0.25);
-
     }
 
     header h1 {
       margin: 0;
-      margin-top: 50px !important;
+      margin-top: 5px !important;
       font-size: 2em;
     }
     .project-nav {
@@ -265,7 +264,7 @@
     .l-head, .r-head {
         display: flex;
         flex-direction: column;
-        height: 400px;
+        height: 300px;
         width: 100%;
         align-items: center;
         text-align: justify;
@@ -358,6 +357,10 @@
       padding-top: 35px;
     }
 
+    .nodiv1, .NMC {
+      scale: 1.2
+    }
+
     h4, h5, .jobtitle {
       margin: 0;
     }
@@ -385,7 +388,7 @@
     #tracklist {
       margin-top: -20px;
       font-size: 1.2rem;
-      width: 800px;
+      width: 750px;
       line-height: 2rem;
     }
 
@@ -418,6 +421,10 @@
       /*text-transform: uppercase;*/
       align-self: center;
       width: fit-content;
+    }
+
+    .contact:hover, .personalplay:hover {
+      background: #00b3ff;
     }
 
     .personalplay {
@@ -531,10 +538,25 @@
             }
         }
 
-        
+        #hiddenText {
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          transition: max-height 0.5s ease, opacity 0.5s ease;
+          position: absolute;
+          top: 40%;
+          z-index: 1;
+          background: inherit;
+        }
+
+        #hiddenText:not(.hidden) {
+          max-height: 1000px; /* or whatever works */
+          opacity: 1;
+        }
 
         .hidden {
-            display: none;
+            /*display: none;*/
+            opacity: 0;
         }
 
         .moreinfo {
@@ -571,12 +593,18 @@
           }
 
           #tracklist {
-            width: 600px;
+            width: 650px;
           }
         }
 
     
     @media (max-width: 767px) {  
+
+      #hiddenText {
+        position: relative; 
+        top: auto;
+      }
+
       nav {
         justify-content: flex-start;
       }
@@ -781,6 +809,9 @@
     }
 
     .r-head {
+      position: relative;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: stretch;
       width: 50%;
@@ -886,7 +917,7 @@
     <div class="l-head">
       <h1>James-Dean Roy</h1>
       <p>Managing projects • Supporting teams • Delivering results</p>
-      <a class="mailto" href="mailto:livercrap@hotmail.co.uk"><button class="contact">CONTACT: ✉ livercrap@hotmail.co.uk</button></a>
+      <a class="mailto" href="mailto:jdroy92@outlook.com"><button class="contact">Contact ✉ JDRoy92@outlook.com</button></a>
       <a><button class="personalplay">Personal Playlist: 🎵 link to playlist</button></a>
     </div>
     <div class="r-head">
@@ -913,7 +944,7 @@
   <div class="btmcontainer">
   <!--PROJECT ZERO-->
 <div id="project0" class="project-content active">
-      <div class="nodiv1">
+      <div class="nodiv1 NMC">
         <h4>Northern Music Company <span style="font-style:italic; font-weight: lighter;">(Oct 2023 - Present)</span></h4>
         <p style="text-align: center;">Artist Management & Business Support<br>
         <span style="font-style:italic;">Ongoing | Remote | Part-time</span></p>
@@ -983,7 +1014,7 @@ Beyond project coordination and reporting, I develop templates, checklists, and 
       <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/3pr4hQdl7fbVNb5ZXO6RaI?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </div>
     </div>
-    <div class="section reverse" id="sec2">
+    <div class="section reverse hidden" id="sec2">
       <h2>BOTTOM SECTION</h2>
       <br>
       <div class="summary">
@@ -1013,7 +1044,7 @@ Graduate: 2025</p>
       <p>A practical degree focused on artist and product development, innovation, marketing, and sustainability. The course provided strong academic grounding in key areas such as project management, research, and strategic planning. Alongside this, I independently sourced and completed a placement year at Northern Music Company, which allowed me to apply and extend my learning in a real-world industry setting. This has since developed into an ongoing freelance position.</p>
     </div>
     <div class="nodiv1">
-      <h4 style="font-size: 2.3rem;">Key Experiences</h4>
+      <h4 style="font-size: 2.1rem;">Key Experiences</h4>
     </div>
     <div class="section" id="sec1">
       <p style="font-weight: bold;">Post-Brexit EU Touring Policy Impact Analysis <span style="font-style:italic; font-weight: lighter;">(Dissertation Project)</span></p>
@@ -1062,7 +1093,7 @@ Feedback praised the genuine connection made with the artist and the meaningful 
 <br><br>
 <img src="https://1drv.ms/f/c/a78c5b214e1a25ea/EjXqN47TVy1IiGWMT4s04EsBjH9JjiXcppvQSM2vUgX66w?e=SH3uHY" alt="alt3"></p>
     </div>
-    <div class="section" id="sec8">
+    <div class="section hidden" id="sec8">
       <p style="font-weight: bold;">boldtext<span style="font-style:italic; font-weight: lighter;">italicized</span></p>
       <p>
         content
@@ -1150,7 +1181,7 @@ Managed park-wide atmosphere via music systems to enhance customer experience an
 Worked solo in Galway, launching a new ride for the company as part of a Winter Wonderland event
       </p>
     </div>
-    <div class="section" id="sec7">
+    <div class="section hidden" id="sec7">
       <p style="font-weight: bold;">boldtext<span style="font-style:italic; font-weight: lighter;">italicized</span></p>
       <p>
         content
@@ -1178,9 +1209,23 @@ Worked solo in Galway, launching a new ride for the company as part of a Winter 
 
   <script>
     function toggleInfo() {
+      var text = document.getElementById("hiddenText")
+      var rHead = document.querySelector(".r-head")
+      text.classList.toggle("hidden")
+
+      if (!text.classList.contains("hidden")) {
+        // Add padding to r-head to make space for the expanded content
+        rHead.style.paddingBottom = text.scrollHeight + "px"
+      } else {
+        // Remove padding when collapsed
+        rHead.style.paddingBottom = "0"
+      }
+    }
+    
+    /*function toggleInfo() {
             var text = document.getElementById("hiddenText");
             text.classList.toggle("hidden");
-        }
+        }*/
 
     // Function to toggle section expansion
     function toggleSection(button) {
