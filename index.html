@@ -379,14 +379,14 @@
     }
 
     #spotifyEmbed {
-      height: 151px;
+      /*height: 151px;*/
       vertical-align: bottom;
       overflow: hidden;
       line-height: 0;
     }
 
     #tracklist {
-      margin-top: -20px;
+      /*margin-top: -20px;*/
       font-size: 1.2rem;
       width: 750px;
       line-height: 2rem;
@@ -930,7 +930,7 @@
         <p>I’ve led commercial teams, coordinated projects, and supported international releases. Having worked in a variety of roles across various industries, I can contribute throughout the business. I’m versatile, eager to learn, and happy to help wherever needed</p>
         <p>I’m committed to having a positive impact not just on projects but internal teams, external partners, and audiences alike</p>
         <p style="text-align: center;">I currently seek exciting opportunities and welcome the chance to discuss a range of projects and roles - Contact</p>
-        <p style="text-align: center;">[Title: Recent Listens = Personal Playlist]</p></div>
+        <p class="hidden" style="text-align: center;">[Title: Recent Listens = Personal Playlist]</p></div>
     </div>
     <button class="toggle-button" onclick="toggleDarkMode()">Light</button>
   </header>
@@ -951,9 +951,10 @@
       </div>
   <div class="section" id="sec0">
       <div class="summary" style="font-size: 1.1rem;">
-        <p>What began as a student placement evolved into a freelance role where I’ve become a trusted contributor across campaigns, operations, and logistics. While my work sits on the outside of a formal role, I help, support, add structure, streamline processes, increase efficiency, and step up to lead where needed - working on a range of projects across a roster of international heavy rock and metal artists...</p>
+        <p>What began as a student placement evolved into a freelance role where I’ve become a trusted contributor across campaigns, operations, and logistics. While my work sits on the outside of a formal role, I help, support, add structure, streamline processes, increase efficiency, and step up to lead where needed - working on a range of projects across a roster of international heavy rock and metal artists.</p>
       </div>
         <div class="det_of" style="font-size: 1.1rem;">
+          <br>
           <p style="font-weight: bold; text-decoration: underline;"> Responsibilities Include:</p>
           <ul>
             <li>Campaign Coordination - manage rollout documents, timelines and schedules, and coordinate across stakeholders</li><br>
@@ -1553,7 +1554,7 @@ function updateAlbumInfo() {
       <iframe
         src="${album.spotifyEmbedUrl}?utm_source=generator&theme=0&hide_cover=1&show_playcount=0&size=compact"
         width="100%"
-        height="151"
+        height="152"
         frameBorder="0"
         allow="encrypted-media"
         style="border-radius: 0.5rem;"
@@ -1561,7 +1562,7 @@ function updateAlbumInfo() {
       </iframe>
     `;
 
-    trackList.innerHTML = album.tracklist?.map(track => `<li>${track}</li>`).join('') || '';
+    trackList.innerHTML = album.tracklist?.map(track => `<p>${track}</p>`).join('') || '';
   } catch (err) {
     console.error("Error in updateAlbumInfo:", err);
   }
