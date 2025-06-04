@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="telephone=no">-->
+  <meta name="viewport" content="min-width=768">
   <title>JDRoy.com</title>
   <style>
     html {
@@ -144,12 +145,12 @@
       margin: 0 10px;
     }
     .summary p {
-      text-align: justify;
+      text-align: left;
       margin: 0;
       font-size: 0.95em;
     }
     .reverse .summary p {
-      text-align: justify;
+      text-align: left;
     }
     .expand-button {
       background: #007BFF;
@@ -815,7 +816,7 @@
       justify-content: center;
       align-items: stretch;
       width: 50%;
-      text-align: justify;
+      text-align: left;
     }
       
       header {
@@ -1073,7 +1074,7 @@ Co-authored the MEG industry report by providing festival data and written analy
     <div class="section" id="sec4">
       <p style="font-weight: bold;">Black Deer Festival 2022 <span style="font-style:italic; font-weight: lighter;">(Main Stage Artist Liaison)</span></p>
       <p>Acted as the main point of contact for artists and their management on the Main Stage
-<br>br  
+<br><br> 
 Escorted acts, confirmed set lists and show-stop agreements, and supported backstage operations</p>
     </div>
     <div class="section" id="sec5">
@@ -1562,7 +1563,14 @@ function updateAlbumInfo() {
       </iframe>
     `;
 
-    trackList.innerHTML = album.tracklist?.map(track => `<p>${track}</p>`).join('') || '';
+    trackList.innerHTML = album.tracklist?.map((track, index, arr) => {
+  const isFirst = index === 0;
+  const isLast = index === arr.length - 1;
+  const prefix = (!isFirst && !isLast) ? '• ' : '';
+  return `<p>${prefix}${track}</p>`;
+}).join('') || '';
+    
+    // trackList.innerHTML = album.tracklist?.map(track => `<p>${track}</p>`).join('') || '';
   } catch (err) {
     console.error("Error in updateAlbumInfo:", err);
   }
