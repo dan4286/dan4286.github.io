@@ -250,12 +250,10 @@
         text-align: justify;
       }
 
-      
-
-      .AI {
+      .subheading {
         font-style: italic;
-        font-size: 0.7em;
-        color: lightgray;
+        font-weight: bold;
+        font-size: 0.9rem;
       }
 
     .halfheader {
@@ -424,24 +422,12 @@
       width: fit-content;
     }
 
-    .contact:hover, .personalplay:hover {
+    .contact:hover {
       background: #00b3ff;
     }
 
     .personalplay {
-      background: #007bff9b;
       color: white;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 0.85em;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s;
-      /*text-transform: uppercase;*/
-      align-self: center;
-      width: fit-content;
-      margin-top: 10px;      
     }
     
     .carousel-info-row {
@@ -545,7 +531,7 @@
           overflow: hidden;
           transition: max-height 0.5s ease, opacity 0.5s ease;
           position: absolute;
-          top: 40%;
+          top: 30%;
           z-index: 1;
           background: inherit;
         }
@@ -572,7 +558,7 @@
 
         @media screen and (min-width: 768px) and (max-width: 1130px) {
           .topcontainer, .btmcontainer {
-            overflow-x: auto;
+            overflow-x: hidden;
             width: 1131px; 
             margin: 0 auto;
           }
@@ -595,6 +581,10 @@
 
           #tracklist {
             width: 650px;
+          }
+
+          #project1 {
+            overflow-x: auto !important;
           }
         }
 
@@ -898,12 +888,6 @@
         align-items: center;
 
       }
-      
-      .JD {
-        font-style: italic;
-        font-size: 0.6em;
-        color: lightgray;
-      }
 
       .vid {
         justify-content: center;
@@ -917,9 +901,9 @@
   <header class="halfheader vc">
     <div class="l-head">
       <h1>James-Dean Roy</h1>
-      <p>Managing projects • Supporting teams • Delivering results</p>
+      <p class="subheading">Managing projects • Supporting teams • Delivering results</p>
       <a class="mailto" href="mailto:jdroy92@outlook.com"><button class="contact">Contact ✉ JDRoy92@outlook.com</button></a>
-      <a><button class="personalplay">Personal Playlist: 🎵 link to playlist</button></a>
+      <p class="personalplay">Personal Playlist: <a href='https://open.spotify.com/track/3k38K0CjsmtnlAR5fyHmdc?si=aacefa042abe4714' target='_blank'><button style='background-color: #1DB954; color: white; border: none; padding: 4px 16px; border-radius: 20px; cursor: pointer;'>▶ Play</button></a></p>
     </div>
     <div class="r-head">
       <p style="font-size: 1.2em;">A project manager and music business professional with progressive experience in Artist Management, Events, Digital Media Management, Marketing, and Development...
@@ -927,11 +911,16 @@
       </p>
     
       <div id="hiddenText" class="hidden">
-        <p style="text-align: center;">Widely experienced with an unrivalled work ethic, professionalism, and a can-do attitude</p>
+        <p style="text-align: center; font-weight: bold">Widely experienced with an unrivalled work ethic, professionalism, and a can-do attitude</p>
         <p>I’ve led commercial teams, coordinated projects, and supported international releases. Having worked in a variety of roles across various industries, I can contribute throughout the business. I’m versatile, eager to learn, and happy to help wherever needed</p>
         <p>I’m committed to having a positive impact not just on projects but internal teams, external partners, and audiences alike</p>
-        <p style="text-align: center;">I currently seek exciting opportunities and welcome the chance to discuss a range of projects and roles - Contact</p>
-        <p class="hidden" style="text-align: center;">[Title: Recent Listens = Personal Playlist]</p></div>
+        <p style="font-weight: bold; text-decoration: underline">SKILLS & ABILITIES</p>
+        <p style="text-align: center;">Leading, Managing & Motivating    |    Coordinating    |    Problem Solving    |    Creative Thinking</p>
+        <p style="font-weight: bold; text-decoration: underline">DIGITAL TOOLS</p>
+        <p style="text-align: center;">Microsoft Office & Google Workspace   |   Canva & DAWs <span style="font-style:italic; font-size: 0.8rem;">(Audacity, FL Studio, DaVinci Resolve)</span></p>
+        <p>I currently seek exciting opportunities and welcome the chance to discuss a range of projects and roles - <a class="mailto" style="font-weight: bold; text-decoration: underline" href="mailto:jdroy92@outlook.com">Contact</a></p>
+        <p style="text-align: center; font-weight: bold;" class="personalplay">Recent Listens: <a href='https://open.spotify.com/track/3k38K0CjsmtnlAR5fyHmdc?si=aacefa042abe4714' target='_blank'><button style='background-color: #1DB954; color: white; border: none; padding: 4px 16px; border-radius: 20px; cursor: pointer;'>▶ Play</button></a></p>
+      </div>
     </div>
     <button class="toggle-button" onclick="toggleDarkMode()">Light</button>
   </header>
