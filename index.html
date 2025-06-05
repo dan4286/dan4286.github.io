@@ -127,9 +127,19 @@
       transition: all 0.3s ease-in-out;
       scroll-margin-top: 100px;
     }
+
+    #sec0.section {
+        background-color: rgba(0, 0, 0, 0);
+      }
+
     body.dark-mode .section {
       background: rgba(44, 44, 44, 0.5);
       box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    body.dark-mode #sec0.section {
+      background-color: rgba(0, 0, 0, 0.1);
+
     }
     .section img {
       max-width: 100%;
@@ -209,6 +219,11 @@
       margin: 0;
       order: 2;
     }
+
+    .jdrimg {
+      scale: 0.9;
+    }
+
     .reverse .summary {
       flex-direction: column;
     }
@@ -1090,7 +1105,7 @@ Investigated how these changes have affected access to EU markets and disrupted 
 Co-authored the MEG industry report by providing festival data and written analysis of artist line-ups at Cheltenham Jazz Festival and 2000 Trees (2017–2024)
 <br><br>
 </p>
-<img src="img.png" alt="missing image">
+<img class="jdrimg" style="display: block; margin: 0 auto;" src="https://i.postimg.cc/tR1bv8sV/Image-00.gif" alt="missing image">
     </div>
     <div class="section" id="sec4">
       <p style="font-weight: bold;">Black Deer Festival 2022 <span style="font-style:italic; font-weight: lighter;">(Main Stage Artist Liaison)</span></p>
