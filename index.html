@@ -11,6 +11,8 @@
   <style>
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
+
     }
     body {
       font-family: /*Cambria, */Aptos, Arial, sans-serif;
@@ -276,7 +278,7 @@
       .footer-content {
         display: flex !important; 
         justify-content: space-between;
-        padding: 10px 300px 40px 300px;
+        padding: 0px 290px 35px 290px;
         align-items: center;
         background-color: #30303068;
         color: #ffffff
@@ -487,13 +489,14 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 50px;
+            height: 40px;
             background: linear-gradient(45deg, #c41e3a, #8b0000);
             color: white;
             display: flex;
             align-items: center;
             box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
             z-index: 1000;
+            overflow: hidden;
         }
 
         .breaking-label {
@@ -508,7 +511,7 @@
             border-radius: 3px;
             margin-left: 10px;
             flex-shrink: 0;
-            animation: pulse 2s infinite;
+            z-index: 2;
         }
 
         @keyframes pulse {
@@ -516,25 +519,30 @@
             50% { opacity: 0.8; }
         }
 
-        .ticker-content {
+        .ticker-container {
             flex: 1;
             overflow: hidden;
-            position: relative;
             height: 100%;
+            position: relative;
         }
 
-        .ticker-items {
+        .ticker-track {
             display: flex;
-            align-items: center;
             height: 100%;
-            animation: scroll 30s linear infinite;
-            white-space: nowrap;
+            align-items: center;
+            position: absolute;
+            animation: slide 300s linear infinite;
         }
 
         .ticker-item {
+            white-space: nowrap;
             font-size: 16px;
-            margin-right: 100px;
-            flex-shrink: 0;
+            margin-right: 50px;
+        }
+
+        @keyframes slide {
+            from { transform: translateX(50vw); }
+            to { transform: translateX(-100%); }
         }
 
         .ticker-separator {
@@ -543,14 +551,6 @@
             margin: 0 20px;
         }
 
-        @keyframes scroll {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
 
         #hiddenText {
           max-height: 0;
@@ -618,16 +618,21 @@
             width: 750px;
           }
 
-          #project1 {
-            overflow-x: auto !important;
-          }
-
           .show1100 {
             display: none;
           }
 
           .show768 {
             display: block;
+          }
+
+          .footer-content {
+            display: flex; 
+            justify-content: space-between;
+            padding: 0px 90px 35px 90px;
+            align-items: center;
+            background-color: #30303068;
+            color: #ffffff
           }
         }
 
@@ -774,7 +779,7 @@
         flex: 1;
       }
 
-      .news-ticker {
+      /*.news-ticker {
                 height: 50px;
             }
 
@@ -795,36 +800,10 @@
 
             .ticker-separator {
                 margin: 0 15px;
-            }
+            }*/
     }
 
-    @media (max-width: 480px) {
-            .news-ticker {
-                height: 45px;
-            }
-
-            .breaking-label {
-                font-size: 10px;
-                padding: 5px 8px;
-                letter-spacing: 0.3px;
-            }
-
-            .ticker-item {
-                font-size: 13px;
-                margin-right: 60px;
-            }
-
-            .ticker-items {
-                animation: scroll 18s linear infinite;
-            }
-
-            .ticker-separator {
-                margin: 0 12px;
-            }
-        }
-
-
-
+   
     /* Desktop-specific styles */
     @media (min-width: 768px) {
       .halfheader {
@@ -1226,25 +1205,30 @@ Worked solo in Galway, launching a new ride for the company as part of a Winter 
   </div>
   </div>
 
-  <div class="news-ticker hidden">
+  <div class="news-ticker">
         <div class="breaking-label">Did You Know?</div>
-        <div class="ticker-content">
-            <div class="ticker-items">
-                <span class="ticker-item">Filler Text</span>
-                <span class="ticker-separator">●</span>
-                <span class="ticker-item">More filler text</span>
-                <span class="ticker-separator">●</span>
-                <span class="ticker-item">Even more Filler text</span>
-                <span class="ticker-separator">●</span>
-                <span class="ticker-item">the most filler text yet</span>
-                <span class="ticker-separator">●</span>
+        <div class="ticker-container">
+            <div class="ticker-track">
+                <div class="ticker-item">
+                    <span class="ticker-separator">●</span>
+                    <span class="ticker-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+                    <span class="ticker-separator">●</span>
+                    <span class="ticker-item">Donec venenatis erat quis ultricies finibus</span>
+                    <span class="ticker-separator">●</span>
+                    <span class="ticker-item">In eget dictum mauris, sit amet porttitor libero</span>
+                    <span class="ticker-separator">●</span>
+                    <span class="ticker-item">Fusce scelerisque condimentum orci at rutrum</span>
+                    <span class="ticker-separator">●</span>
+                    <span class="ticker-item">Donec interdum mi ut lorem aliquam, a fringilla libero bibendum</span>
+                </div>
             </div>
         </div>
     </div>
   <footer>
     <div class="footer-content">
-      <p>&copy; 2025 JDRoy.com</p>
+      <!--<img style="scale: 0.8;" src="https://i.ibb.co/ZRsBxSXb/3-OWe3-logo-small-light.png" alt="3OMlogo">-->
       <p>Get in Touch: <a href='jdroy92@outlook.com' target='_blank'><button style='background-color: #221db9; color: white; border: none; padding: 4px 16px; border-radius: 20px; cursor: pointer;'>✉ Contact</button></a> </p>
+      <p>&copy; 2025 JDRoy.com</p>
     </div>
   </footer>
   <script>
@@ -1397,7 +1381,7 @@ const albumData = [
     coverUrl: "https://i.scdn.co/image/ab67616d00001e025666ba36bbb0c8e7976b71fa",
     releaseYear: "1973",
     genre: "Progressive Rock",
-    spotifyEmbedUrl: "https://open.spotify.com/embed/album/0ETFjACtuP2ADo6LFhL6HN?utm_source=generator&theme=0&hide_cover=1&show_playcount=0&size=compact",
+    spotifyEmbedUrl: "https://open.spotify.com/embed/album/1HOjUmdJsbyvFZtAB8G7kP?utm_source=generator&theme=0&hide_cover=1&show_playcount=0&size=compact",
     tracklist: [
       "<span style='text-decoration: underline; font-weight: bold;'>Supported Katatonia’s Album & Tour Campaigns (2025)</span>",
       "Collaborate on campaign planning and development*",
@@ -1415,7 +1399,7 @@ const albumData = [
     coverUrl: "https://images.pexels.com/photos/3552948/pexels-photo-3552948.jpeg",
     releaseYear: "1969",
     genre: "Rock",
-    spotifyEmbedUrl: "https://open.spotify.com/embed/album/0ETFjACtuP2ADo6LFhL6HN?utm_source=generator&theme=0&hide_cover=1&show_playcount=0&size=compact",
+    spotifyEmbedUrl: "https://open.spotify.com/embed/album/1HOjUmdJsbyvFZtAB8G7kP?utm_source=generator&theme=0&hide_cover=1&show_playcount=0&size=compact",
     tracklist: [
       "<span style='text-decoration: underline; font-weight: bold;'>Currently Supporting Paradise Lost’s Album & Tour Campaigns (2025)</span>",
       "Collaborate on campaign planning and development*",
@@ -1620,6 +1604,15 @@ document.addEventListener('DOMContentLoaded', () => {
   updateBandInfo();
   updateAlbumInfo();
 });
+
+const track = document.querySelector('.ticker-track');
+        const item = track.querySelector('.ticker-item');
+
+        // Clone the item to fill enough space for seamless animation
+        while (track.scrollWidth < window.innerWidth * 20) {
+            const clone = item.cloneNode(true);
+            track.appendChild(clone);
+        }
 </script>
 
 </body>
