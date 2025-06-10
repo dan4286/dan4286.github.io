@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="format-detection" content="telephone=no">-->
-  <meta name="viewport" content="min-width=768">
+  <meta name="format-detection" content="telephone=no">
   <title>JDRoy.com</title>
   <style>
     html {
@@ -163,9 +162,8 @@
     }
     .reverse .summary p {
       text-align: left;
-
-    
     }
+
     .expand-button {
       background: #007BFF;
       color: white;
@@ -236,6 +234,7 @@
       text-align: center;
       font-size: 1.2em;
       margin: 10px 0;
+      padding-bottom: 25px;
     }
     .reverse h2 {
       text-align: center;
@@ -384,8 +383,8 @@
       padding-top: 35px;
     }
 
-    .nodiv1, .NMC {
-      scale: 1.2
+    .nodiv1>h4 {
+      text-align: center;
     }
 
     h4, h5, .jobtitle {
@@ -396,6 +395,17 @@
       font-size: 1.3rem;
     }
 
+    
+      .asterix {
+        width: 100vw; 
+        font-style: italic; 
+        opacity: 0.7; 
+        text-align: center; 
+        margin-top: -25px;
+        margin-left: -35%;
+      }
+
+
     .jobtitle {
       width: 230px;
       background-color: rgba(37, 139, 255, 0.25);
@@ -403,6 +413,10 @@
       padding: 3px 0;
       border: 1px solid;
       border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .listbreak>li {
+      padding-bottom: 20px;
     }
 
     #spotifyEmbed {
@@ -552,7 +566,7 @@
         }
 
 
-        #hiddenText {
+        #hiddenTextDesktop {
           max-height: 0;
           opacity: 0;
           overflow: hidden;
@@ -563,7 +577,7 @@
           background: inherit;
         }
 
-        #hiddenText:not(.hidden) {
+        #hiddenTextDesktop:not(.hidden) {
           max-height: 1000px; /* or whatever works */
           opacity: 1;
         }
@@ -577,11 +591,7 @@
           scale: 0.8;
         }
 
-        #sec0 {
-          width: 800px;
-          background:rgba(0, 0, 0, 0.1);
-          font-size: 1.2em;
-        }
+        
 
         .show768 {
             display: none;
@@ -606,6 +616,10 @@
             width: 100%;
           }
 
+          .l-head-mob, .r-head-mob {
+            display: none;
+          } 
+
           .carousel-container {
             width: 100vw;
             padding: 0;
@@ -616,6 +630,19 @@
 
           #tracklist {
             width: 750px;
+          }
+
+          .asterix {
+            width: 100vw; 
+            font-style: italic; 
+            opacity: 0.7; 
+            text-align: center; 
+            margin-top: -25px;
+            margin-left: -50%;
+          }
+
+          .l-head-mob, .r-head-mob {
+            display: none;
           }
 
           .show1100 {
@@ -637,59 +664,127 @@
         }
 
     
+        /* MOBILE STYLES */
+
     @media (max-width: 767px) {  
 
-      #hiddenText {
+      html {
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
+
+      .l-head, .r-head {
+        display: none;
+      }
+
+      .l-head-mob, .r-head-mob {
+            display: block;
+            margin-top: 30px;
+          }
+
+      #hiddenTextMobile {
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          transition: max-height 0.5s ease, opacity 0.5s ease;
+          position: absolute;
+          top: 40%;
+          z-index: 1;
+          background: inherit;
+        }
+
+        #hiddenTextMobile:not(.hidden) {
+          max-height: 1000px; /* or whatever works */
+          opacity: 1;
+        }    
+
+        .mobile-hidden {
+          display: none;
+        }
+
+      #sec0 {
+        max-width: 100vw;
+      }
+
+      #tracklist {
+        max-width: 80vw;
+      }
+
+      .nodiv1 {
+        max-width: 100vw;
+      }
+
+      .asterix {
+        width: 100vw; 
+        font-style: italic; 
+        opacity: 0.7; 
+        text-align: center; 
+        margin-top: -25px;
+        margin-left: -10%;
+      }
+
+
+      .footer-content {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        padding: 0;
+      }
+
+
+
+      /*#hiddenText {
         position: relative; 
         top: auto;
-      }
+      }*/
 
-      nav {
+      /*nav {
         justify-content: flex-start;
-      }
+      }*/
 
-      .project-nav a:not(:last-child)::after {
+      /*.project-nav a:not(:last-child)::after {
         content: '';
         display: block;
-        width: 100vw; /* Extends to full viewport width */
+        width: 100vw;
         height: 0px;
-        background: #ccc; /* Adjust color to match your design */
+        background: #ccc;
         position: relative;
         left: 50%;
-        transform: translateX(-50%); /* Centers the line relative to viewport */
-      }
+        transform: translateX(-50%);
+      }*/
 
-      .project-nav a::after {
+      /*.project-nav a::after {
         content: '';
         display: block;
-        width: 100vw; /* Extends to full viewport width */
+        width: 100vw;
         height: 0px;
-        background: #ccc; /* Adjust color to match your design */
+        background: #ccc;
         position: relative;
         left: 50%;
-        transform: translateX(-50%); /* Centers the line relative to viewport */
-      }
+        transform: translateX(-50%);
+      }*/
 
 
-      .project-nav {
+      /*.project-nav {
         width: 100vw;
         text-align: center;
-      }
+      }*/
 
       .project-nav {
         padding: 5px;
         gap: 5px;
       }
 
-        .carousel-container {
-          scale: 0.5;
-          padding: 50px 0 0 0;
-          margin: -100px 0 -25px 0;
-        }
+      .carousel-container {
+        transform: scale(0.5);
+        padding: 50px 0 0 0;
+        margin: -100px 0 -25px 0;
+        width: 100vw;
+      }
 
         .carousel-nav {
           position: absolute;
-          scale: 1.2;
+          scale: 0.8;
           margin-top: 250px;
           display: inline-block;
           z-index: auto !important;
@@ -723,9 +818,14 @@
           padding: 0 1rem;
           text-align: center;
           margin-top: -75px !important;
+          width: 80vw;
         }
 
-        .carousel-info-row #bandInfo {
+        /** {
+          outline: red 1px solid;
+        }*/
+
+        /*.carousel-info-row #bandInfo {
           order: 1;
         }
 
@@ -738,29 +838,23 @@
         .carousel-info-row .carousel-nav {
           margin: 0;
           scale: 0.8
-        }
+        }*/
 
-        .carousel-info-row > div {
+        /*.carousel-info-row > div {
           flex: none !important;
           margin: 0 !important;
-        }
+        }*/
 
-        #bandInfo {
-          text-align: center;
-          font-size: 1rem;
-          padding: 0 1rem;
-        }
-
-      .carousel-container {
+      /*.carousel-container {
         text-align: center;
-      }
+      }*/
 
       .carousel-section {
         padding: 10px;
       }
 
       .carousel-info-row {
-        flex-direction: row; /* Change this from column to row */
+        flex-direction: row;
         justify-content: center;
         align-items: center;
         gap: 1rem;
@@ -768,16 +862,16 @@
         text-align: center;
       }
 
-      .carousel-info-row .carousel-nav.prev,
+      /*.carousel-info-row .carousel-nav.prev,
       .carousel-info-row .carousel-nav.next {
-        order: initial; /* Remove or reset ordering */
+        order: initial;
         margin: 0 !important;
-      }
+      }*/
 
-      .carousel-info-row #bandInfo {
-        order: initial; /* Optional, to keep band info in center */
+      /*.carousel-info-row #bandInfo {
+        order: initial;
         flex: 1;
-      }
+      }*/
 
       /*.news-ticker {
                 height: 50px;
@@ -806,6 +900,16 @@
    
     /* Desktop-specific styles */
     @media (min-width: 768px) {
+      
+      .mobile-break {
+        display: none;
+      }
+
+       .l-head-mob, .r-head-mob {
+            display: none;
+          } 
+
+      
       .halfheader {
       display: flex;
       justify-content: space-between;
@@ -838,6 +942,14 @@
         font-size: 3em;
         font-family: 'Lucida Sans', Arial, sans-serif;
       }
+
+      #sec0 {
+          width: 800px;
+          background:rgba(0, 0, 0, 0.1);
+          font-size: 1.2em;
+        }
+
+
       .project-nav {
         padding: 10px 0;
       }
@@ -932,7 +1044,35 @@
         <button class="expand-button moreinfo" onclick="toggleInfo()">More Info</button>
       </p>
     
-      <div id="hiddenText" class="hidden">
+      <div id="hiddenTextDesktop" class="hidden">
+        <p style="text-align: center; font-weight: bold">Widely experienced with an unrivalled work ethic, professionalism, and a can-do attitude</p>
+        <p>I’ve led commercial teams, coordinated projects, and supported international releases. Having worked in a variety of roles across various industries, I can contribute throughout the business. I’m versatile, eager to learn, and happy to help wherever needed</p>
+        <p>I’m committed to having a positive impact not just on projects but internal teams, external partners, and audiences alike</p>
+        <p style="font-weight: bold; text-decoration: underline">SKILLS & ABILITIES</p>
+        <p class="show768" style="text-align: left; white-space: pre;">• Leading, Managing & Motivating     • Coordinating     <br>• Problem Solving                              • Creative Thinking</p>
+        <p class="show1100" style="text-align: center;">Leading, Managing & Motivating    |    Coordinating    |    Problem Solving    |    Creative Thinking</p>
+        <p style="font-weight: bold; text-decoration: underline">DIGITAL TOOLS</p>
+        <p class="show768" style="text-align: left;">• Microsoft Office & Google Workspace <br>• Canva & DAWs <span style="font-style:italic; font-size: 0.8rem;">(Audacity, FL Studio, DaVinci Resolve)</span></p>
+        <p class="show1100" style="text-align: center;">Microsoft Office & Google Workspace   |   Canva & DAWs <span style="font-style:italic; font-size: 0.8rem;">(Audacity, FL Studio, DaVinci Resolve)</span></p>
+        <p>I currently seek exciting opportunities and welcome the chance to discuss a range of projects and roles - <a class="mailto" style="font-weight: bold; text-decoration: underline" href="mailto:jdroy92@outlook.com">Contact</a></p>
+        <p style="text-align: center; font-weight: bold;" class="personalplay">Recent Listens: <a href='https://open.spotify.com/track/3k38K0CjsmtnlAR5fyHmdc?si=aacefa042abe4714' target='_blank'><button style='background-color: #1DB954; color: white; border: none; padding: 4px 16px; border-radius: 20px; cursor: pointer;'>▶ Play</button></a></p>
+      </div>
+    </div>
+    <button class="toggle-button" onclick="toggleDarkMode()">Light</button>
+
+    <!-- mobile header -->
+     <div class="l-head-mob">
+      <h1>James-Dean Roy</h1>
+      <p class="subheading">Managing projects • Supporting teams <br class="mobile-break"> • Delivering results</p>
+      <a class="mailto" href="mailto:jdroy92@outlook.com"><button class="contact">Contact ✉ JDRoy92@outlook.com</button></a>
+      <p class="personalplay">Personal Playlist: <a href='https://open.spotify.com/track/3k38K0CjsmtnlAR5fyHmdc?si=aacefa042abe4714' target='_blank'><button style='background-color: #1DB954; color: white; border: none; padding: 4px 16px; border-radius: 20px; cursor: pointer;'>▶ Play</button></a></p>
+    </div>
+    <div class="r-head-mob">
+      <p style="font-size: 1.2em;">A project manager and music business professional with progressive experience in Artist Management, Events, Digital Media Management, Marketing, and Development...
+        <button class="expand-button moreinfo" onclick="toggleInfo()">More Info</button>
+      </p>
+    
+      <div id="hiddenTextMobile" class="hidden">
         <p style="text-align: center; font-weight: bold">Widely experienced with an unrivalled work ethic, professionalism, and a can-do attitude</p>
         <p>I’ve led commercial teams, coordinated projects, and supported international releases. Having worked in a variety of roles across various industries, I can contribute throughout the business. I’m versatile, eager to learn, and happy to help wherever needed</p>
         <p>I’m committed to having a positive impact not just on projects but internal teams, external partners, and audiences alike</p>
@@ -958,8 +1098,8 @@
   <div class="btmcontainer">
   <!--PROJECT ZERO-->
 <div id="project0" class="project-content active">
-      <div class="nodiv1 NMC">
-        <h4>Northern Music Company <span style="font-style:italic; font-weight: lighter;">(Oct 2023 - Present)</span></h4>
+      <div class="nodiv1">
+        <h4>Northern Music Company <br class="mobile-break"><span style="font-style:italic; font-weight: lighter;">(Oct 2023 - Present)</span></h4>
         <p style="text-align: center;">Artist Management & Business Support<br>
         <span style="font-style:italic;">Ongoing | Remote | Part-time</span></p>
       </div>
@@ -970,19 +1110,20 @@
         <div class="det_of" style="font-size: 1.1rem;">
           <br>
           <p style="font-weight: bold; text-decoration: underline;"> Responsibilities Include:</p>
-          <ul>
-            <li>Campaign Coordination - manage rollout documents, timelines and schedules, and coordinate across stakeholders</li><br>
-            <li>Support senior management - deliver, support, and report on projects, ensuring consistency, clear communication, and momentum across a range of projects</li><br>
-            <li>Cross-team Liaison - coordinate actions, secure assets and problem solve across distributors, labels, PR teams, artists, suppliers, and collaborators</li><br>
-            <li>Create and Develop working documents - support planning, coordination and data-led decision-making through trackers, timelines, schedules and campaign reports</li><br>
-            <li>Platform Oversight - manage and leverage DSPs and platforms such as Spotify, YouTube and BandsInTown</li><br>
-            <li>Content Review and Quality-Check - ensure accuracy and support final sign-off for campaign materials, press releases, bios, lyric sheets, and artwork</li><br>
-            <li>Mailing list Strategy - plan and deliver targeted mailing list and presale activity to drive early interest, reward loyal fans, and grow audiences</li><br>
-            <li>Content & Asset Support - Independently and collaboratively design, edit and deliver artwork, assets and content</li><br>
+          <ul class="listbreak">
+            <li>Campaign Coordination - manage rollout documents, timelines and schedules, and coordinate across stakeholders</li>
+            <li>Support senior management - deliver, support, and report on projects, ensuring consistency, clear communication, and momentum across a range of projects</li>
+            <li>Cross-team Liaison - coordinate actions, secure assets and problem solve across distributors, labels, PR teams, artists, suppliers, and collaborators</li>
+            <li>Create and Develop working documents - support planning, coordination and data-led decision-making through trackers, timelines, schedules and campaign reports</li>
+            <li>Platform Oversight - manage and leverage DSPs and platforms such as Spotify, YouTube and BandsInTown</li>
+            <li>Content Review and Quality-Check - ensure accuracy and support final sign-off for campaign materials, press releases, bios, lyric sheets, and artwork</li>
+            <li>Mailing list Strategy - plan and deliver targeted mailing list and presale activity to drive early interest, reward loyal fans, and grow audiences</li>
+            <li>Content & Asset Support - Independently and collaboratively design, edit and deliver artwork, assets and content</li>
           </ul>
-          <p>How I Work: <br><br>
-The role isn’t always about controlling the situation, but supporting the team, tracking activity, and creating the right conditions for projects to be successful and delivered on schedule.
-<br><br>
+          <p style="white-space: pre-wrap;">How I Work: 
+            
+The role isn’t always about controlling the situation, but supporting the team, tracking activity, and creating the right conditions for projects to be successful and delivered on schedule. 
+            
 Beyond project coordination and reporting, I develop templates, checklists, and frameworks to streamline work, improve efficiency, and leave something behind that makes the next project stronger than the last.</p>
         </div>
       
@@ -1014,20 +1155,19 @@ Beyond project coordination and reporting, I develop templates, checklists, and 
     <ul id="tracklist">
       <!-- Tracklist items will be populated here -->
     </ul>
-    <p style="width: 700px; font-style: italic; opacity: 0.7; text-align: left; margin-top: -25px;">* performed across campaigns</p>
+    <p class="asterix">* performed across campaigns</p>
   </div>
   
     </div>
     </div>
     <div class="section" id="sec1">
       <h2>Additional Campaign Contributions</h2>
-      <br>
       <div style="text-align:center; font-size: 1.2rem;"> 
       <p>Devin Townsend - ‘PowerNerd’</p>
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/2UfPWyvEAbQmQR6s6ob7tX?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <br><p>White Stones - ‘Memoria Viva’</p>
+      <iframe style="border-radius:12px;" src="https://open.spotify.com/embed/album/2UfPWyvEAbQmQR6s6ob7tX?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <p>White Stones - ‘Memoria Viva’</p>
       <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/3Ybli3DLqkR2lfHccqOpqY?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <br><p>Paradise Lost - ‘Icon 30’</p>
+      <p>Paradise Lost - ‘Icon 30’</p>
       <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/3pr4hQdl7fbVNb5ZXO6RaI?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </div>
     </div>
@@ -1060,18 +1200,16 @@ University of Gloucestershire
 Graduate: 2025</p>
       <p>A practical degree focused on artist and product development, innovation, marketing, and sustainability. The course provided strong academic grounding in key areas such as project management, research, and strategic planning. Alongside this, I independently sourced and completed a placement year at Northern Music Company, which allowed me to apply and extend my learning in a real-world industry setting. This has since developed into an ongoing freelance position.</p>
     </div>
-    <div class="nodiv1">
-      <h4 style="font-size: 2.1rem;">Key Experiences</h4>
-    </div>
+      <h4 style="font-size: 2rem; text-align: center;">Key Experiences</h4>
     <div class="section" id="sec1">
       <p style="font-weight: bold;">Post-Brexit EU Touring Policy Impact Analysis <span style="font-style:italic; font-weight: lighter;">(Dissertation Project)</span></p>
-      <p>Developed an independent major research project assessing the impact of post-Brexit visa, permit, and carnet requirements on independent UK artists touring in the EU
-<br><br>
-Conducted in-depth contextual analysis of policy documents, industry surveys, and academic texts including reports from UK Music, MU, ISM, and the APPG
-<br><br>
-Synthesised qualitative and quantitative data from reports and case studies to evaluate financial, administrative, and logistical barriers
-<br><br>
-Investigated how these changes have affected access to EU markets and disrupted a key development pathway</p>
+      <p style="white-space: pre-wrap;">Developed an independent major research project assessing the impact of post-Brexit visa, permit, and carnet requirements on independent UK artists touring in the EU. 
+        
+Conducted in-depth contextual analysis of policy documents, industry surveys, and academic texts including reports from UK Music, MU, ISM, and the APPG.
+
+Synthesised qualitative and quantitative data from reports and case studies to evaluate financial, administrative, and logistical barriers.
+
+Investigated how these changes have affected access to EU markets and disrupted a key development pathway.</p>
     </div>
     <div class="section" id="sec2">
       <p style="font-weight: bold;">Cheltenham Jazz Festival <span style="font-style:italic; font-weight: lighter;">(Stage Assistant)</span></p>
@@ -1079,35 +1217,35 @@ Investigated how these changes have affected access to EU markets and disrupted 
     </div>
     <div class="section" id="sec3">
       <p style="font-weight: bold;">The Music Economy of Gloucestershire <span style="font-style:italic; font-weight: lighter;">(Industry Report)</span></p>
-      <p><a class="mailto" href="https://heyzine.com/flip-book/c2e6bc4e6a.html">https://heyzine.com/flip-book/c2e6bc4e6a.html</a>
-<br><br>
+      <p style="white-space: pre-wrap;"><a class="mailto" href="https://heyzine.com/flip-book/c2e6bc4e6a.html">https://heyzine.com/flip-book/c2e6bc4e6a.html</a>
+
 Co-authored the MEG industry report by providing festival data and written analysis of artist line-ups at Cheltenham Jazz Festival and 2000 Trees (2017–2024)
-<br><br>
+
 </p>
 <img class="jdrimg" style="display: block; margin: 0 auto;" src="https://i.postimg.cc/tR1bv8sV/Image-00.gif" alt="missing image">
     </div>
     <div class="section" id="sec4">
       <p style="font-weight: bold;">Black Deer Festival 2022 <span style="font-style:italic; font-weight: lighter;">(Main Stage Artist Liaison)</span></p>
-      <p>Acted as the main point of contact for artists and their management on the Main Stage
-<br><br> 
-Escorted acts, confirmed set lists and show-stop agreements, and supported backstage operations</p>
+      <p style="white-space: pre-wrap;">Acted as the main point of contact for artists and their management on the Main Stage. 
+        
+Escorted acts, confirmed set lists and show-stop agreements, and supported backstage operations.</p>
     </div>
     <div class="section" id="sec5">
       <p style="font-weight: bold;">Artist Management & Development Assistant <span style="font-style:italic; font-weight: lighter;">(Module Project)</span></p>
-      <p>Supported the development of a final-year student’s music project from demo to final mix, offering A&R input across lyrics, arrangement, and marketing
-<br><br>
-Feedback praised the genuine connection made with the artist and the meaningful impact my contributions had on the project</p>
+      <p style="white-space: pre-wrap;">Supported the development of a final-year student’s music project from demo to final mix, offering A&R input across lyrics, arrangement, and marketing.
+
+Feedback praised the genuine connection made with the artist and the meaningful impact my contributions had on the project.</p>
     </div>
     <div class="section" id="sec6">
       <p style="font-weight: bold;">“Zine the Scene” <span style="font-style:italic; font-weight: lighter;">(New Music Enterprise Module)</span></p>
-      <p>Project managed the creation of a digital guide documenting Cheltenham’s live music venues
-<br><br>
+      <p style="white-space: pre-wrap;">Project managed the creation of a digital guide documenting Cheltenham’s live music venues
+
 <img class="jdrimg" style="display: block; margin: 0 auto;" src="https://1drv.ms/i/c/a78c5b214e1a25ea/IQREHoB3ZGaTTbLo0-5aY_gpAf4lYiUi-E860kK4QswgEPI?width=364&height=500" alt="Zine image"></p>
     </div>
     <div class="section" id="sec7">
       <p style="font-weight: bold;">Mindsong “Sing to Remember” Project <span style="font-style:italic; font-weight: lighter;">(Module Project)</span></p>
-      <p>Curated a package of contemporary songs for use in Mindsong’s Dementia therapy sessions
-<br><br>
+      <p style="white-space: pre-wrap;">Curated a package of contemporary songs for use in Mindsong’s Dementia therapy sessions
+
 <img class="jdrimg" style="display: block; margin: 0 auto;" src="https://1drv.ms/i/c/a78c5b214e1a25ea/IQRuCQS05wGUSbPr1D63gYuMATSf1wPq6S-vUEv_i4LUhBA?width=364&height=500" alt="Mindsong image"></p>
     </div>
     <div class="section hidden" id="sec8">
@@ -1124,76 +1262,66 @@ Feedback praised the genuine connection made with the artist and the meaningful 
     
     <div class="section" id="sec1">
       <p style="font-weight: bold;">Career Coach – University of Gloucestershire <span style="font-style:italic; font-weight: lighter;">(Sep 2022 – Oct 2023)</span></p>
-      <p>Delivered 1:1 mentoring to students as they explored career paths, sourced industry experience, and prepared to enter employment
-<br><br>
-Led in-lecture presentations and supported sessions on topics such as creative CVs, mock interviews, and professional mindset
-<br><br>
-Co-created resource packs designed to support students across the university with job searches, CV writing, application prep, and interviews
-<br><br>
-Promoted the service across all four Cheltenham and Gloucester campuses, liaising with Heads of School and business partners to increase visibility and engagement</p>
+      <p style="white-space: pre-wrap;">Delivered 1:1 mentoring to students as they explored career paths, sourced industry experience, and prepared to enter employment.
+
+Led in-lecture presentations and supported sessions on topics such as creative CVs, mock interviews, and professional mindset.
+
+Co-created resource packs designed to support students across the university with job searches, CV writing, application prep, and interviews.
+
+Promoted the service across all four Cheltenham and Gloucester campuses, liaising with Heads of School and business partners to increase visibility and engagement.</p>
     </div>
     <div class="section" id="sec2">
-      <p style="font-weight: bold; white-space: pre;">Front of House: <span style="font-weight: normal;">Cheltenham</span>   |   Duty Manager: <span style="font-weight: normal;">Wrexham</span>
+      <p style="font-weight: bold; white-space: pre-wrap;">Front of House: <span style="font-weight: normal;">Cheltenham</span><span class="mobile-hidden">   |   </span><br class="mobile-break">Duty Manager: <span style="font-weight: normal;">Wrexham</span>
 Premier Inn (Whitbread) <span style="font-style:italic; font-weight: lighter;">(May 2021 – Oct 2023)</span></p>
-      <p>
-        Completed full Duty Manager training after early promotion from Nights Receptionist
-<br><br>
-Delivered a consistent level of service and maintained brand standards
-<br><br>
-Provided consistent weekend and peak-period support alongside university studies
-      </p>
+      <p style="white-space: pre-wrap;">Completed full Duty Manager training after early promotion from Nights Receptionist.
+
+Delivered a consistent level of service and maintained brand standards.
+
+Provided consistent weekend and peak-period support alongside university studies.</p>
     </div>
     <div class="section" id="sec3">
       <p style="font-weight: bold;">Bar Manager – Great Northern Group<span style="font-style:italic; font-weight: lighter;"> (Aug 2018 – Sep 2020)</span></p>
-      <p>
-        Managed and coordinated up to 10 bar, restaurant and function staff
-<br><br>
-Ensured our well-rounded product of high-quality food and drinks, atmosphere, and service were consistently achieved
-<br><br>
-Responsibilities included daily reporting, takings, stock management, and general cellar and building maintenance and repairs
-<br><br>
-Introduced tailored 1:1 staff coaching to improve service speed, team confidence, and consistency, praised by both senior management and staff
-<br><br>
-Curated a new music strategy to enhance the atmosphere and drive sales
-<br><br>
-*Awarded TripAdvisor's Travellers' Choice Award for 2020, entering the top 10% of restaurants around the world for feedback
-      </p>
+      <p style="white-space: pre-wrap;">Managed and coordinated up to 10 bar, restaurant and function staff.
+
+Ensured our well-rounded product of high-quality food and drinks, atmosphere, and service were consistently achieved.
+
+Responsibilities included daily reporting, takings, stock management, and general cellar and building maintenance and repairs.
+
+Introduced tailored 1:1 staff coaching to improve service speed, team confidence, and consistency, praised by both senior management and staff.
+
+Curated a new music strategy to enhance the atmosphere and drive sales.
+
+*Awarded TripAdvisor's Travellers' Choice Award for 2020, entering the top 10% of restaurants around the world for feedback.</p>
     </div>
     <div class="section" id="sec4">
       <p style="font-weight: bold;">Business Development Executive – The Barcode Warehouse <span style="font-style:italic; font-weight: lighter;">(Jun 2018 – Aug 2018)</span></p>
-      <p>
-        Established and built relationships with clients and suppliers
-<br><br>
-Communicated via phone, email, and in-person meetings in a fast-paced environment
-<br><br>
-Generated and followed up on leads across barcoding, EPOS, label/receipt hardware and software solutions
-      </p>
+      <p style="white-space: pre-wrap;">Established and built relationships with clients and suppliers.
+
+Communicated via phone, email, and in-person meetings in a fast-paced environment.
+
+Generated and followed up on leads across barcoding, EPOS, label/receipt hardware and software solutions.</p>
     </div>
     <div class="section" id="sec5">
       <p style="font-weight: bold;">SME Account Manager – Vodafone<span style="font-style:italic; font-weight: lighter;"> (Jun 2016 – Aug 2018)</span></p>
-      <p>
-        Direct point of contact for premium SME clients, managing accounts with 9 to 250 connections — from sole traders and small businesses to international corporations and embassies
-<br><br>
+      <p style="white-space: pre-wrap;">Direct point of contact for premium SME clients, managing accounts with 9 to 250 connections — from sole traders and small businesses to international corporations and embassies
+
 Handled upgrades, billing and usage queries, orders, network and device issues, and disputes, as well as initiating and supporting account renewals
-<br><br>
+
 Took ownership of customer issues, acting as an advocate for assigned accounts and supporting department escalations
-<br><br>
+
 Provided floor support and assisted with onboarding new recruits
-<br><br>
-<span style="font-style: italic;">Going above and beyond was at the heart of what we did</span> 
-      </p>
+
+<span style="font-style: italic;">Going above and beyond was at the heart of what we did</span></p>
     </div>
     <div class="section" id="sec6">
       <p style="font-weight: bold;">Senior Attendant – Reeves Leisure Ltd<span style="font-style:italic; font-weight: lighter;"> (Mar 2009 – Nov 2015)</span></p>
-      <p>
-        Deputised for the owner across subcontracted grounds, overseeing ride operations, staff, and public safety
-<br><br>
-Led staff training and completed daily ride checks, urgent maintenance, and health and safety documentation
-<br><br>
-Managed park-wide atmosphere via music systems to enhance customer experience and increase engagement
-<br><br>
-Worked solo in Galway, launching a new ride for the company as part of a Winter Wonderland event
-      </p>
+      <p style="white-space: pre-wrap;">Deputised for the owner across subcontracted grounds, overseeing ride operations, staff, and public safety.
+
+Led staff training and completed daily ride checks, urgent maintenance, and health and safety documentation.
+
+Managed park-wide atmosphere via music systems to enhance customer experience and increase engagement.
+
+Worked solo in Galway, launching a new ride for the company as part of a Winter Wonderland event.</p>
     </div>
     <div class="section hidden" id="sec7">
       <p style="font-weight: bold;">boldtext<span style="font-style:italic; font-weight: lighter;">italicized</span></p>
@@ -1233,18 +1361,18 @@ Worked solo in Galway, launching a new ride for the company as part of a Winter 
   </footer>
   <script>
     function toggleInfo() {
-      var text = document.getElementById("hiddenText")
-      var rHead = document.querySelector(".r-head")
-      text.classList.toggle("hidden")
+  const isMobile = window.innerWidth <= 767;
+  const text = document.getElementById(isMobile ? "hiddenTextMobile" : "hiddenTextDesktop");
+  const rHead = document.querySelector(isMobile ? ".r-head-mob" : ".r-head");
 
-      if (!text.classList.contains("hidden")) {
-        // Add padding to r-head to make space for the expanded content
-        rHead.style.paddingBottom = text.scrollHeight + "px"
-      } else {
-        // Remove padding when collapsed
-        rHead.style.paddingBottom = "0"
-      }
-    }
+  text.classList.toggle("hidden");
+
+  if (!text.classList.contains("hidden")) {
+    rHead.style.paddingBottom = text.scrollHeight + "px";
+  } else {
+    rHead.style.paddingBottom = "0";
+  }
+}
     
     /*function toggleInfo() {
             var text = document.getElementById("hiddenText");
