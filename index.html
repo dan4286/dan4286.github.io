@@ -164,6 +164,11 @@
       text-align: left;
     }
 
+    .acc {
+      padding-top: 30px;
+      font-weight: bold;
+    }
+
     .expand-button {
       background: #007BFF;
       color: white;
@@ -222,6 +227,23 @@
 
     .jdrimg {
       scale: 0.9;
+    }
+
+    .seccol {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 75px;
+      margin: 15px;
+      padding: 15px;
+      text-align: center;
+      background: rgba(44, 44, 44, 0.5);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .horisect {
+      align-items: center; 
+      justify-content: center;
     }
 
     .reverse .summary {
@@ -392,17 +414,17 @@
     }
 
     h4 {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
     }
 
     
       .asterix {
-        width: 100vw; 
+        /*width: 100vw;*/ 
         font-style: italic; 
         opacity: 0.7; 
         text-align: center; 
-        margin-top: -25px;
-        margin-left: -35%;
+        /*margin-top: -25px;
+        margin-left: -35%;*/
       }
 
 
@@ -417,6 +439,8 @@
 
     .listbreak>li {
       padding-bottom: 20px;
+      list-style-type: none;
+      white-space: pre-wrap;
     }
 
     #spotifyEmbed {
@@ -633,12 +657,12 @@
           }
 
           .asterix {
-            width: 100vw; 
+            /*width: 100vw;*/ 
             font-style: italic; 
             opacity: 0.7; 
-            text-align: center; 
+            /*text-align: center; 
             margin-top: -25px;
-            margin-left: -50%;
+            margin-left: -50%;*/
           }
 
           .l-head-mob, .r-head-mob {
@@ -715,12 +739,12 @@
       }
 
       .asterix {
-        width: 100vw; 
+        /*width: 100vw;*/ 
         font-style: italic; 
         opacity: 0.7; 
-        text-align: center; 
+        /*text-align: center; 
         margin-top: -25px;
-        margin-left: -10%;
+        margin-left: -10%;*/
       }
 
 
@@ -1028,6 +1052,19 @@
         align-items: center;
       }
     }
+
+    
+    /* 110px plus-specific styles */
+
+    @media (min-width: 1100px) {
+    .l-head {
+      width: 40%;
+    }
+    .r-head {
+      width: 60%;
+    }
+    }
+
   </style>
 </head>
 <body class="dark-mode">
@@ -1037,25 +1074,27 @@
       <h1>James-Dean Roy</h1>
       <p class="subheading">Managing projects • Supporting teams • Delivering results</p>
       <a class="mailto" href="mailto:jdroy92@outlook.com"><button class="contact">Contact ✉ JDRoy92@outlook.com</button></a>
-      <p class="personalplay">Personal Playlist: <a href='https://open.spotify.com/track/3k38K0CjsmtnlAR5fyHmdc?si=aacefa042abe4714' target='_blank'><button style='background-color: #1DB954; color: white; border: none; padding: 4px 16px; border-radius: 20px; cursor: pointer;'>▶ Play</button></a></p>
+      <p class="personalplay">Recent Listens: <a href='https://open.spotify.com/playlist/1tDl46v0jrrDMp7ljATZZj?pi=-DdOGeUMR-CMF' target='_blank'><button style='background-color: #1DB954; color: white; border: none; padding: 4px 16px; border-radius: 20px; cursor: pointer;'>▶ Play</button></a></p>
     </div>
     <div class="r-head">
-      <p style="font-size: 1.2em;">A project manager and music business professional with progressive experience in Artist Management, Events, Digital Media Management, Marketing, and Development...
-        <button class="expand-button moreinfo" onclick="toggleInfo()">More Info</button>
+      <p style="font-size: 1.2em; white-space: pre-wrap;">A project manager and music business professional. 
+Experienced in artist management, events, digital media management, marketing, and project development....<button class="expand-button moreinfo" onclick="toggleInfo()">More Info</button>
       </p>
     
       <div id="hiddenTextDesktop" class="hidden">
         <p style="text-align: center; font-weight: bold">Widely experienced with an unrivalled work ethic, professionalism, and a can-do attitude</p>
         <p>I’ve led commercial teams, coordinated projects, and supported international releases. Having worked in a variety of roles across various industries, I can contribute throughout the business. I’m versatile, eager to learn, and happy to help wherever needed</p>
         <p>I’m committed to having a positive impact not just on projects but internal teams, external partners, and audiences alike</p>
-        <p style="font-weight: bold; text-decoration: underline">SKILLS & ABILITIES</p>
-        <p class="show768" style="text-align: left; white-space: pre;">• Leading, Managing & Motivating     • Coordinating     <br>• Problem Solving                              • Creative Thinking</p>
-        <p class="show1100" style="text-align: center;">Leading, Managing & Motivating    |    Coordinating    |    Problem Solving    |    Creative Thinking</p>
-        <p style="font-weight: bold; text-decoration: underline">DIGITAL TOOLS</p>
-        <p class="show768" style="text-align: left;">• Microsoft Office & Google Workspace <br>• Canva & DAWs <span style="font-style:italic; font-size: 0.8rem;">(Audacity, FL Studio, DaVinci Resolve)</span></p>
-        <p class="show1100" style="text-align: center;">Microsoft Office & Google Workspace   |   Canva & DAWs <span style="font-style:italic; font-size: 0.8rem;">(Audacity, FL Studio, DaVinci Resolve)</span></p>
-        <p>I currently seek exciting opportunities and welcome the chance to discuss a range of projects and roles - <a class="mailto" style="font-weight: bold; text-decoration: underline" href="mailto:jdroy92@outlook.com">Contact</a></p>
-        <p style="text-align: center; font-weight: bold;" class="personalplay">Recent Listens: <a href='https://open.spotify.com/track/3k38K0CjsmtnlAR5fyHmdc?si=aacefa042abe4714' target='_blank'><button style='background-color: #1DB954; color: white; border: none; padding: 4px 16px; border-radius: 20px; cursor: pointer;'>▶ Play</button></a></p>
+        <p style="font-weight: bold; text-decoration: underline; margin-bottom: 0;">SKILLS & ABILITIES</p>
+        <p class="show768" style="text-align: left; white-space: pre; margin-top: 0;">• Leading, Managing & Motivating     • Coordinating     <br>• Problem Solving                              • Creative Thinking</p>
+        <p class="show1100" style="text-align: center; margin-top: 0">Leading, Managing & Motivating    |    Coordinating    |    Problem Solving    |    Creative Thinking</p>
+        <p style="font-weight: bold; text-decoration: underline; margin-bottom: 0">DIGITAL TOOLS</p>
+        <p class="show768" style="text-align: left; margin-top: 0">• Microsoft Office & Google Workspace <br>• Canva & DAWs <span style="font-style:italic; font-size: 0.8rem;">(Audacity, FL Studio, DaVinci Resolve)</span></p>
+        <p class="show1100" style="text-align: center; margin-top: 0">Microsoft Office & Google Workspace   |   Canva & DAWs <span style="font-style:italic; font-size: 0.8rem;">(Audacity, FL Studio, DaVinci Resolve)</span></p>
+        <p>I currently seek exciting opportunities and welcome the chance to discuss a range of projects and roles</p>
+        <p style="text-align: center;"><a class="mailto" href="mailto:jdroy92@outlook.com"><button style="background-color: rgb(0, 125, 0);" class="contact">Contact ✉</button></a></p>
+        <p style="text-align: center; font-weight: bold;" class="personalplay">Recent Listens: <a href='https://open.spotify.com/playlist/1tDl46v0jrrDMp7ljATZZj?pi=-DdOGeUMR-CMF' target='_blank'><button style='background-color: #1DB954; color: white; border: none; padding: 4px 16px; border-radius: 20px; cursor: pointer;'>▶ Play</button></a></p>
+        <p>Current Reads: The Alchemist (Paulo Coelho)</p>
       </div>
     </div>
     <button class="toggle-button" onclick="toggleDarkMode()">Light</button>
@@ -1065,7 +1104,7 @@
       <h1>James-Dean Roy</h1>
       <p class="subheading">Managing projects • Supporting teams <br class="mobile-break"> • Delivering results</p>
       <a class="mailto" href="mailto:jdroy92@outlook.com"><button class="contact">Contact ✉ JDRoy92@outlook.com</button></a>
-      <p class="personalplay">Personal Playlist: <a href='https://open.spotify.com/track/3k38K0CjsmtnlAR5fyHmdc?si=aacefa042abe4714' target='_blank'><button style='background-color: #1DB954; color: white; border: none; padding: 4px 16px; border-radius: 20px; cursor: pointer;'>▶ Play</button></a></p>
+      <p class="personalplay">Personal Playlist: <a href='https://open.spotify.com/track/1tDl46v0jrrDMp7ljATZZj?si=aacefa042abe4714' target='_blank'><button style='background-color: #1DB954; color: white; border: none; padding: 4px 16px; border-radius: 20px; cursor: pointer;'>▶ Play</button></a></p>
     </div>
     <div class="r-head-mob">
       <p style="font-size: 1.2em;">A project manager and music business professional with progressive experience in Artist Management, Events, Digital Media Management, Marketing, and Development...
@@ -1082,26 +1121,28 @@
         <p style="font-weight: bold; text-decoration: underline">DIGITAL TOOLS</p>
         <p class="show768" style="text-align: left;">• Microsoft Office & Google Workspace <br>• Canva & DAWs <span style="font-style:italic; font-size: 0.8rem;">(Audacity, FL Studio, DaVinci Resolve)</span></p>
         <p class="show1100" style="text-align: center;">Microsoft Office & Google Workspace<span class="mobile-hidden">   |   </span><br class="mobile-break">Canva & DAWs <span style="font-style:italic; font-size: 0.8rem;">(Audacity, FL Studio, DaVinci Resolve)</span></p>
-        <p>I currently seek exciting opportunities and welcome the chance to discuss a range of projects and roles - <a class="mailto" style="font-weight: bold; text-decoration: underline" href="mailto:jdroy92@outlook.com">Contact</a></p>
-        <p style="text-align: center; font-weight: bold;" class="personalplay">Recent Listens: <a href='https://open.spotify.com/track/3k38K0CjsmtnlAR5fyHmdc?si=aacefa042abe4714' target='_blank'><button style='background-color: #1DB954; color: white; border: none; padding: 4px 16px; border-radius: 20px; cursor: pointer;'>▶ Play</button></a></p>
+        <p>I currently seek exciting opportunities and welcome the chance to discuss a range of projects and roles</p>
+        <p style="text-align: center;"><a class="mailto" href="mailto:jdroy92@outlook.com"><button style="background-color: rgb(0, 125, 0);" class="contact">Contact ✉</button></a></p>
+        <p style="text-align: center; font-weight: bold;" class="personalplay">Recent Listens: <a href='https://open.spotify.com/track/1tDl46v0jrrDMp7ljATZZj?si=aacefa042abe4714' target='_blank'><button style='background-color: #1DB954; color: white; border: none; padding: 4px 16px; border-radius: 20px; cursor: pointer;'>▶ Play</button></a></p>
+        <p>Current Reads: The Alchemist (Paulo Coelho)</p>
       </div>
     </div>
     <button class="toggle-button" onclick="toggleDarkMode()">Light</button>
   </header>
   </div>
   <div class="project-nav">
-    <a href="#" onclick="showProject('project0')" class="active">Current Employment</a>
-    <a href="#" onclick="showProject('project1')">Education</a>
-    <a href="#" onclick="showProject('project2')">Previous Employment</a>
+    <a href="#" onclick="event.preventDefault(); showProject('project0')" class="active">Current Employment</a>
+    <a href="#" onclick="event.preventDefault(); showProject('project1')">Education</a>
+    <a href="#" onclick="event.preventDefault(); showProject('project2')">Previous Employment</a>
   </div>
 
   <div class="btmcontainer">
   <!--PROJECT ZERO-->
 <div id="project0" class="project-content active">
       <div class="nodiv1">
-        <h4>Northern Music Company <br class="mobile-break"><span style="font-style:italic; font-weight: lighter;">(Oct 2023 - Present)</span></h4>
+        <h4>Northern Music Company <br><span style="font-style:italic; font-weight: lighter; font-size: 1rem;">(Oct 2023 - Present)</span></h4>
         <p style="text-align: center;">Artist Management & Business Support<br>
-        <span style="font-style:italic;">Ongoing | Remote | Part-time</span></p>
+        <span style="font-style:italic; font-size: 0.9rem;">Ongoing | Remote | Part-time</span></p>
       </div>
   <div class="section" id="sec0">
       <div class="summary" style="font-size: 1.1rem;">
@@ -1109,20 +1150,27 @@
       </div>
         <div class="det_of" style="font-size: 1.1rem;">
           <br>
-          <p style="font-weight: bold; text-decoration: underline;"> Responsibilities Include:</p>
+          <p style="font-weight: bold; text-decoration: underline; font-size: 1.2rem;"> Responsibilities Include:</p>
           <ul class="listbreak">
-            <li>Campaign Coordination - manage rollout documents, timelines and schedules, and coordinate across stakeholders</li>
-            <li>Support senior management - deliver, support, and report on projects, ensuring consistency, clear communication, and momentum across a range of projects</li>
-            <li>Cross-team Liaison - coordinate actions, secure assets and problem solve across distributors, labels, PR teams, artists, suppliers, and collaborators</li>
-            <li>Create and Develop working documents - support planning, coordination and data-led decision-making through trackers, timelines, schedules and campaign reports</li>
-            <li>Platform Oversight - manage and leverage DSPs and platforms such as Spotify, YouTube and BandsInTown</li>
-            <li>Content Review and Quality-Check - ensure accuracy and support final sign-off for campaign materials, press releases, bios, lyric sheets, and artwork</li>
-            <li>Mailing list Strategy - plan and deliver targeted mailing list and presale activity to drive early interest, reward loyal fans, and grow audiences</li>
-            <li>Content & Asset Support - Independently and collaboratively design, edit and deliver artwork, assets and content</li>
+            <li><span style="font-weight: bold; text-decoration: underline; font-size: 1.1rem;">Campaign and Project Management</span>
+Managing rollout documents, timelines and schedules, coordinating across stakeholders</li>
+            <li><span style="font-weight: bold; text-decoration: underline; font-size: 1.1rem;">Support Senior Management</span>
+Delivering, supporting, and reporting, ensuring consistency, clear communication, and momentum across a range of projects</li>
+            <li><span style="font-weight: bold; text-decoration: underline; font-size: 1.1rem;">Cross-Team Liaison</span>
+Coordinating actions, securing assets and problem solving across distributors, labels, PR teams, artists, suppliers, and collaborators</li>
+            <li><span style="font-weight: bold; text-decoration: underline; font-size: 1.1rem;">Create and Develop Working Documents</span>
+Support planning and data-led decision-making through trackers, timelines, schedules and campaign reports</li>
+            <li><span style="font-weight: bold; text-decoration: underline; font-size: 1.1rem;">Platform Oversight</span>
+Manage and leverage DSPs and platforms such as Spotify, YouTube and BandsInTown</li>
+            <li><span style="font-weight: bold; text-decoration: underline; font-size: 1.1rem;">Content Review and Quality-Check</span>
+Ensure accuracy and support final sign-off for campaign materials, press releases, bios, lyric sheets, and artwork</li>
+            <li><span style="font-weight: bold; text-decoration: underline; font-size: 1.1rem;">Mailing list Strategy</span>
+Planning and delivering targeted mailing list and presale activities to drive early interest, reward loyal fans, and grow audiences across the roster</li>
+            <li><span style="font-weight: bold; text-decoration: underline; font-size: 1.1rem;">Content & Asset Support</span>
+Independently and collaboratively design, edit and deliver artwork, assets and content</li>
           </ul>
-          <p style="white-space: pre-wrap;">How I Work: 
-            
-The role isn’t always about controlling the situation, but supporting the team, tracking activity, and creating the right conditions for projects to be successful and delivered on schedule. 
+          <P style="font-weight: bold; margin-bottom: 0.5rem;">How I Work:</P>
+          <p style="white-space: pre-wrap; margin-top: 0.5rem">The role isn’t always about controlling the situation, but supporting the team, tracking activity, and creating the right conditions for projects to be successful and delivered on schedule. 
             
 Beyond project coordination and reporting, I develop templates, checklists, and frameworks to streamline work, improve efficiency, and leave something behind that makes the next project stronger than the last.</p>
         </div>
@@ -1155,7 +1203,6 @@ Beyond project coordination and reporting, I develop templates, checklists, and 
     <ul id="tracklist">
       <!-- Tracklist items will be populated here -->
     </ul>
-    <p class="asterix">* performed across campaigns</p>
   </div>
   
     </div>
@@ -1163,11 +1210,11 @@ Beyond project coordination and reporting, I develop templates, checklists, and 
     <div class="section" id="sec1">
       <h2>Additional Campaign Contributions</h2>
       <div style="text-align:center; font-size: 1.2rem;"> 
-      <p>Devin Townsend - ‘PowerNerd’</p>
+      <p class="acc">Devin Townsend - ‘PowerNerd’</p>
       <iframe style="border-radius:12px;" src="https://open.spotify.com/embed/album/2UfPWyvEAbQmQR6s6ob7tX?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <p>White Stones - ‘Memoria Viva’</p>
+      <p class="acc">White Stones - ‘Memoria Viva’</p>
       <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/3Ybli3DLqkR2lfHccqOpqY?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <p>Paradise Lost - ‘Icon 30’</p>
+      <p class="acc">Paradise Lost - ‘Icon 30’</p>
       <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/3pr4hQdl7fbVNb5ZXO6RaI?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </div>
     </div>
@@ -1202,7 +1249,7 @@ Graduate: 2025</p>
     </div>
       <h4 style="font-size: 2rem; text-align: center;">Key Experiences</h4>
     <div class="section" id="sec1">
-      <p style="font-weight: bold;">Post-Brexit EU Touring Policy Impact Analysis <span style="font-style:italic; font-weight: lighter;">(Dissertation Project)</span></p>
+      <p style="font-weight: bold; font-size: 1.1rem;"><span style="text-decoration: underline;">Post-Brexit EU Touring Policy Impact Analysis</span><span style="font-style:italic; font-weight: lighter; font-size: 1rem; text-decoration: none !important;"> (Dissertation Project)</span></p>
       <p style="white-space: pre-wrap;">Developed an independent major research project assessing the impact of post-Brexit visa, permit, and carnet requirements on independent UK artists touring in the EU. 
         
 Conducted in-depth contextual analysis of policy documents, industry surveys, and academic texts including reports from UK Music, MU, ISM, and the APPG.
@@ -1212,48 +1259,42 @@ Synthesised qualitative and quantitative data from reports and case studies to e
 Investigated how these changes have affected access to EU markets and disrupted a key development pathway.</p>
     </div>
     <div class="section" id="sec2">
-      <p style="font-weight: bold;">Cheltenham Jazz Festival <span style="font-style:italic; font-weight: lighter;">(Stage Assistant)</span></p>
+      <p style="font-weight: bold; font-size: 1.1rem;"><span style="text-decoration: underline;">Cheltenham Jazz Festival</span><span style="font-style:italic; font-weight: lighter; font-size: 1rem; text-decoration: none !important;"> (Stage Assistant)</span></p>
       <p>Worked directly with the Big Top stage manager, supporting the coordination of artist arrivals and stage changeovers</p>
     </div>
     <div class="section" id="sec3">
-      <p style="font-weight: bold;">The Music Economy of Gloucestershire <span style="font-style:italic; font-weight: lighter;">(Industry Report)</span></p>
-      <p style="white-space: pre-wrap;"><a class="mailto" href="https://heyzine.com/flip-book/c2e6bc4e6a.html">https://heyzine.com/flip-book/c2e6bc4e6a.html</a>
-
-Co-authored the MEG industry report by providing festival data and written analysis of artist line-ups at Cheltenham Jazz Festival and 2000 Trees (2017–2024)
-
+      <p style="font-weight: bold; font-size: 1.1rem;"><span style="text-decoration: underline;">The Music Economy of Gloucestershire</span><span style="font-style:italic; font-weight: lighter; font-size: 1rem; text-decoration: none !important;"> (Industry Report)</span></p>
+      <p style="white-space: pre-wrap;">Co-authored the MEG industry report by providing festival data and written analysis of artist line-ups at Cheltenham Jazz Festival and 2000 Trees (2017–2024)
 </p>
-<img class="jdrimg" style="display: block; margin: 0 auto;" src="https://i.postimg.cc/tR1bv8sV/Image-00.gif" alt="missing image">
+<section style="display: flex; flex-direction: column; align-items: center;"><a class="mailto" href="https://heyzine.com/flip-book/c2e6bc4e6a.html">https://heyzine.com/flip-book/c2e6bc4e6a.html</a>
+<img class="jdrimg" style="display: block; margin: 0 auto;" src="https://i.postimg.cc/tR1bv8sV/Image-00.gif" alt="missing image"></section>
     </div>
     <div class="section" id="sec4">
-      <p style="font-weight: bold;">Black Deer Festival 2022 <span style="font-style:italic; font-weight: lighter;">(Main Stage Artist Liaison)</span></p>
+      <p style="font-weight: bold; font-size: 1.1rem;"><span style="text-decoration: underline;">Black Deer Festival 2022</span><span style="font-style:italic; font-weight: lighter; font-size: 1rem; text-decoration: none !important;"> (Main Stage Artist Liaison)</span></p>
       <p style="white-space: pre-wrap;">Acted as the main point of contact for artists and their management on the Main Stage. 
         
 Escorted acts, confirmed set lists and show-stop agreements, and supported backstage operations.</p>
     </div>
     <div class="section" id="sec5">
-      <p style="font-weight: bold;">Artist Management & Development Assistant <span style="font-style:italic; font-weight: lighter;">(Module Project)</span></p>
+      <p style="font-weight: bold; font-size: 1.1rem;"><span style="text-decoration: underline;">Artist Management & Development Assistant</span><span style="font-style:italic; font-weight: lighter; font-size: 1rem; text-decoration: none !important;"> (Module Project)</span></p>
       <p style="white-space: pre-wrap;">Supported the development of a final-year student’s music project from demo to final mix, offering A&R input across lyrics, arrangement, and marketing.
 
 Feedback praised the genuine connection made with the artist and the meaningful impact my contributions had on the project.</p>
     </div>
-    <div class="section" id="sec6">
-      <p style="font-weight: bold;">“Zine the Scene” <span style="font-style:italic; font-weight: lighter;">(New Music Enterprise Module)</span></p>
+    <section class="seccol">
+    <div class="horisect" id="sec6">
+      <p style="font-weight: bold; font-size: 1.1rem;"><span style="text-decoration: underline;">“Zine the Scene”</span><br><span style="font-style:italic; font-weight: lighter; font-size: 0.9rem; text-decoration: none !important;"> (New Music Enterprise Module)</span></p>
       <p style="white-space: pre-wrap;">Project managed the creation of a digital guide documenting Cheltenham’s live music venues
 
 <img class="jdrimg" style="display: block; margin: 0 auto;" src="https://1drv.ms/i/c/a78c5b214e1a25ea/IQREHoB3ZGaTTbLo0-5aY_gpAf4lYiUi-E860kK4QswgEPI?width=364&height=500" alt="Zine image"></p>
     </div>
-    <div class="section" id="sec7">
-      <p style="font-weight: bold;">Mindsong “Sing to Remember” Project <span style="font-style:italic; font-weight: lighter;">(Module Project)</span></p>
+    <div class="horisect" id="sec7">
+      <p style="font-weight: bold; font-size: 1.1rem;"><span style="text-decoration: underline;">Mindsong “Sing to Remember” Project</span><br><span style="font-style:italic; font-weight: lighter; font-size: 0.9rem; text-decoration: none !important;"> (Module Project)</span></p>
       <p style="white-space: pre-wrap;">Curated a package of contemporary songs for use in Mindsong’s Dementia therapy sessions
 
 <img class="jdrimg" style="display: block; margin: 0 auto;" src="https://1drv.ms/i/c/a78c5b214e1a25ea/IQRuCQS05wGUSbPr1D63gYuMATSf1wPq6S-vUEv_i4LUhBA?width=364&height=500" alt="Mindsong image"></p>
     </div>
-    <div class="section hidden" id="sec8">
-      <p style="font-weight: bold;">boldtext<span style="font-style:italic; font-weight: lighter;">italicized</span></p>
-      <p>
-        content
-      </p>
-    </div>
+    </section>
    </div>
 
   <!-- PROJECT TWO -->
@@ -1364,13 +1405,16 @@ Worked solo in Galway, launching a new ride for the company as part of a Winter 
   const isMobile = window.innerWidth <= 767;
   const text = document.getElementById(isMobile ? "hiddenTextMobile" : "hiddenTextDesktop");
   const rHead = document.querySelector(isMobile ? ".r-head-mob" : ".r-head");
+  const button = rHead.querySelector(".expand-button");
 
   text.classList.toggle("hidden");
 
   if (!text.classList.contains("hidden")) {
     rHead.style.paddingBottom = text.scrollHeight + "px";
+        button.textContent = "Less Info";
   } else {
     rHead.style.paddingBottom = "0";
+        button.textContent = "More Info";
   }
 }
     
@@ -1406,10 +1450,13 @@ Worked solo in Galway, launching a new ride for the company as part of a Winter 
     function toggleDarkMode() {
       const body = document.body;
       const isDarkMode = body.classList.toggle('dark-mode');
-      const button = document.querySelector('.toggle-button');
-      button.textContent = isDarkMode ? 'Light' : 'Dark';
+      const buttons = document.querySelectorAll('.toggle-button');
+      buttons.forEach(button => {
+        button.textContent = isDarkMode ? 'Light' : 'Dark';
+      });
       localStorage.setItem('darkMode', isDarkMode);
     }
+
 
     // Function to show selected project
     function showProject(projectId) {
@@ -1444,18 +1491,19 @@ Worked solo in Galway, launching a new ride for the company as part of a Winter 
     function initializeDarkMode() {
       const savedDarkMode = localStorage.getItem('darkMode');
       const body = document.body;
-      const button = document.querySelector('.toggle-button');
-      // Apply dark mode by default unless explicitly set to false in localStorage
+      const buttons = document.querySelectorAll('.toggle-button');
+
       if (savedDarkMode === null || savedDarkMode === 'true') {
         body.classList.add('dark-mode');
-        button.textContent = 'Light';
+        buttons.forEach(button => button.textContent = 'Light');
       } else {
         body.classList.remove('dark-mode');
-        button.textContent = 'Dark';
+        buttons.forEach(button => button.textContent = 'Dark');
       }
-      // Show Project1 by default
+
       showProject('project0');
     }
+
 
     // Run when the page loads
     document.addEventListener('DOMContentLoaded', initializeDarkMode);
@@ -1511,25 +1559,26 @@ const albumData = [
     genre: "Progressive Rock",
     spotifyEmbedUrl: "https://open.spotify.com/embed/album/1HOjUmdJsbyvFZtAB8G7kP?utm_source=generator&theme=0&hide_cover=1&show_playcount=0&size=compact",
     tracklist: [
-      "<span style='text-decoration: underline; font-weight: bold;'>Supported Katatonia’s Album & Tour Campaigns (2025)</span>",
+      "<span style='text-decoration: underline; font-weight: bold;'>Katatonia’s Album & Tour Campaigns (2025)</span>",
       "Collaborate on campaign planning and development*",
       "Coordinate announcement and release rollouts across DSPs, YouTube, and social channels",
       "Liaise across stakeholders to ensure timely delivery of assets, press, and content*",
       "Strengthened internal planning by creating reference documents, monitoring comms, and streamlining workflows",
       "Acted as liaison between band and PR agency for international press coverage*",
       "<span style='line-height: 2.5; font-weight: bold;'>#Favourite Track: ‘Temporal’</span>   <a href='https://open.spotify.com/track/3k38K0CjsmtnlAR5fyHmdc?si=aacefa042abe4714' target='_blank'><button style='background-color: #1DB954; color: white; border: none; padding: 4px 16px; border-radius: 20px; cursor: pointer;'>▶ Play</button></a>",
+      "<span class='asterix'>* performed across campaigns</span>",
     ]
   },
   {
     id: 2,
     title: "Ascension",
     artist: "Paradise Lost",
-    coverUrl: "https://images.pexels.com/photos/3552948/pexels-photo-3552948.jpeg",
+    coverUrl: "https://i.scdn.co/image/ab67616d00001e02db562e3556da476f806b133a",
     releaseYear: "1969",
     genre: "Rock",
-    spotifyEmbedUrl: "https://open.spotify.com/embed/album/1HOjUmdJsbyvFZtAB8G7kP?utm_source=generator&theme=0&hide_cover=1&show_playcount=0&size=compact",
+    spotifyEmbedUrl: "https://open.spotify.com/embed/track/6E4BYC297NbL2cx90DRmId?utm_source=generator&theme=0&hide_cover=1&show_playcount=0&size=compact",
     tracklist: [
-      "<span style='text-decoration: underline; font-weight: bold;'>Currently Supporting Paradise Lost’s Album & Tour Campaigns (2025)</span>",
+      "<span style='text-decoration: underline; font-weight: bold;'>Paradise Lost’s Album & Tour Campaigns (2025)</span>",
       "Collaborate on campaign planning and development*",
       "Coordinate announcement and release rollouts across DSPs, YouTube, and social channels",
       "Support content creation for social media and mailing lists*",
@@ -1537,6 +1586,7 @@ const albumData = [
       "Developed and delivered a fan-facing giveaway campaign, resulting in an increase in registrations and subscriber engagement ahead of the album rollout*",
       "Developed a merchandise forecasting template using previous tour data to support stock planning",
       "<span style='line-height: 2.5; font-weight: bold;'>#Favourite Track: 'Track 3'</span>   <a href='https://open.spotify.com/track/3k38K0CjsmtnlAR5fyHmdc?si=aacefa042abe4714' target='_blank'><button style='background-color: #1DB954; color: white; border: none; padding: 4px 16px; border-radius: 20px; cursor: pointer;'>▶ Play</button></a>",
+      "<span class='asterix'>* performed across campaigns</span>",
     ]
   },
   {
@@ -1548,7 +1598,7 @@ const albumData = [
     genre: "Hard Rock",
     spotifyEmbedUrl: "https://open.spotify.com/embed/album/1f2Q8urIhVZiuPSiNLcQG6?utm_source=generator&theme=0&hide_cover=1&show_playcount=0&size=compact",
     tracklist: [
-      "<span style='text-decoration: underline; font-weight: bold;'>Support Opeth’s Album & Tour Campaigns</span>",
+      "<span style='text-decoration: underline; font-weight: bold;'>Opeth’s Album & Tour Campaigns</span>",
       "Collaborated on campaign planning and development*",
       "Review and quality-checked album materials; lyric sheets and inserts, ahead of production*",
       "Reported on potential campaign tools, assessing functionality and alignment with campaign goals",
@@ -1557,6 +1607,7 @@ const albumData = [
       "Reviewed and compared terms of a co-branding agreement, preparing notes for internal discussion",
       "Reinforce activities via mailing list, identifying opportunities to offer exclusive or early access to announcements, content, giveaways, and presales*",
       "<span style='line-height: 2.5; font-weight: bold;'>#Favourite Track: ‘§5’</span>   <a href='https://open.spotify.com/track/5yptKqG1ej3TCfn0DforbV?si=aacefa042abe4714' target='_blank'><button style='background-color: #1DB954; color: white; border: none; padding: 4px 16px; border-radius: 20px; cursor: pointer;'>▶ Play</button></a>",
+      "<span class='asterix'>* performed across campaigns</span>",
     ]
   },
   {
@@ -1568,7 +1619,7 @@ const albumData = [
     genre: "Rock",
     spotifyEmbedUrl: "https://open.spotify.com/embed/album/3GEeqRtRemm7JE7bnPep0L?utm_source=generator&theme=0&hide_cover=1&show_playcount=0&size=compact",
     tracklist: [
-      "<span style='text-decoration: underline; font-weight: bold;'>Support Ferocious Dog’s Album & Tour Campaigns</span>",
+      "<span style='text-decoration: underline; font-weight: bold;'>Ferocious Dog’s Album & Tour Campaigns</span>",
       "Collaborated on campaign planning and development*",
       "Produced the social media schedule and supported content creation. Evolved ideas into scripts and worked with the band to produce content",
       "Sourced and coordinated in-store appearances and signing sessions to support the album release and tour",
@@ -1577,6 +1628,7 @@ const albumData = [
       "Created an audience profile to guide content strategy",
       "Recruited and managed a UK-wide street team",
       "<span style='line-height: 2.5; font-weight: bold;'>#Favourite Track: ‘A Place We Call Home’</span>   <a href='https://open.spotify.com/track/3goeH3pl48VGXMRH6z4ZoH?si=aacefa042abe4714' target='_blank'><button style='background-color: #1DB954; color: white; border: none; padding: 4px 16px; border-radius: 20px; cursor: pointer;'>▶ Play</button></a>",
+      "<span class='asterix'>* performed across campaigns</span>",
     ]
   },
 /*  {
@@ -1713,13 +1765,75 @@ function updateAlbumInfo() {
       </iframe>
     `;
 
-    trackList.innerHTML = album.tracklist?.map((track, index, arr) => {
-  const isFirst = index === 0;
-  const isLast = index === arr.length - 1;
-  const prefix = (!isFirst && !isLast) ? '• ' : '';
-  return `<p>${prefix}${track}</p>`;
-}).join('') || '';
-    
+//    trackList.innerHTML = album.tracklist?.map((track, index, arr) => {
+//  const isFirst = index === 0;
+//  const isLast = index === arr.length - 1;
+//  const prefix = (!isFirst && !isLast) ? '• ' : '';
+//  return `<p>${prefix}${track}</p>`;
+//}).join('') || '';
+  
+/*      trackList.innerHTML = `
+        <li>${album.tracklist[0]}</li>
+        <div id="moreTracks" style="display: ${isTracklistExpanded ? 'block' : 'none'};">
+          ${album.tracklist.slice(1).map(track => `<li>${track}</li>`).join('')}
+        </div>
+        <button id="readMoreBtn" class="expand-button moreinfo" onclick="toggleTracklist()">
+          ${isTracklistExpanded ? '− READ LESS' : '+ READ MORE'}
+        </button>
+      `;
+*/
+
+/*trackList.innerHTML = `
+  <div style="margin-bottom: 0.5rem;">${album.tracklist[0]}</div>
+  <ul id="moreTracks" style="display: ${isTracklistExpanded ? 'block' : 'none'}; padding-left: 1.2rem;">
+    ${album.tracklist.slice(1).map(track => `<li>${track}</li>`).join('')}
+  </ul>
+  <button id="readMoreBtn" class="expand-button" onclick="toggleTracklist()">
+    ${isTracklistExpanded ? '− READ LESS' : '+ READ MORE'}
+  </button>
+`;*/
+
+/* BEST YET */
+/*const visibleTracks = album.tracklist;
+const first = visibleTracks[0];
+const middle = visibleTracks.slice(1, -2); // all except first & last two
+const lastTwo = visibleTracks.slice(-2);  // last two items
+
+trackList.innerHTML = `
+  <div style="margin-bottom: 0.5rem;">${first}</div>
+  <ul id="moreTracks" style="display: ${isTracklistExpanded ? 'block' : 'none'}; padding-left: 1.2rem; margin-top: 0;">
+    ${middle.map(track => `<li>${track}</li>`).join('')}
+  </ul>
+  <div id="extraTracks" style="display: ${isTracklistExpanded ? 'block' : 'none'}; margin-top: 0.5rem;">
+    ${lastTwo.map(track => `<div style="margin-bottom: 0.5rem;">${track}</div>`).join('')}
+  </div>
+  <button id="readMoreBtn" class="expand-button moreinfo" onclick="toggleTracklist()">
+    ${isTracklistExpanded ? '− READ LESS' : '+ READ MORE'}
+  </button>
+`;*/
+
+const visibleTracks = album.tracklist;
+const first = visibleTracks[0];
+const middle = visibleTracks.slice(1, -2);
+const lastTwo = visibleTracks.slice(-2);
+
+trackList.innerHTML = `
+  <div style="margin-bottom: 0.5rem;">
+    <span>${first}</span>
+    <button id="readMoreBtn" class="expand-button moreinfo" onclick="toggleTracklist()">
+      ${isTracklistExpanded ? '− READ LESS' : '+ READ MORE'}
+    </button>
+  </div>
+  <ul id="moreTracks" style="display: ${isTracklistExpanded ? 'block' : 'none'}; padding-left: 1.2rem; margin-top: 0;">
+    ${middle.map(track => `<li>${track}</li>`).join('')}
+  </ul>
+  <div id="extraTracks" style="display: ${isTracklistExpanded ? 'block' : 'none'}; margin-top: 0.5rem;">
+    ${lastTwo.map(track => `<div style="margin-bottom: 0.5rem;">${track}</div>`).join('')}
+  </div>
+`;
+
+
+
     // trackList.innerHTML = album.tracklist?.map(track => `<p>${track}</p>`).join('') || '';
   } catch (err) {
     console.error("Error in updateAlbumInfo:", err);
@@ -1741,6 +1855,23 @@ const track = document.querySelector('.ticker-track');
             const clone = item.cloneNode(true);
             track.appendChild(clone);
         }
+
+
+let isTracklistExpanded = false;
+
+function toggleTracklist() {
+  const moreTracks = document.getElementById('moreTracks');
+  const btn = document.getElementById('readMoreBtn');
+  const isHidden = moreTracks.style.display === 'none';
+
+  moreTracks.style.display = isHidden ? 'block' : 'none';
+  btn.textContent = isHidden ? '− READ LESS' : '+ READ MORE';
+
+  isTracklistExpanded = !isTracklistExpanded;
+  updateAlbumInfo(); // re-render current album with new expansion state
+}
+
+
 </script>
 
 </body>
